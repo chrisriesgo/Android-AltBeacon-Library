@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="org.altbeacon.androidaltbeaconsample">
+	<uses-sdk android:minSdkVersion="18" />
+	<application android:label="AltBeacon Sample">
+		<service android:enabled="true" android:exported="true" android:isolatedProcess="false" android:label="Beacon" android:name="org.altbeacon.beacon.service.BeaconService">
+		</service>
+		<service android:enabled="true" android:name="org.altbeacon.beacon.BeaconIntentProcessor">
+			<meta-data android:name="background" android:value="true" />
+			<intent-filter android:priority="1">
+				<action android:name="org.altbeacon.xamarinbeaconreference.MSG_STOP_RANGING" />
+				<action android:name="org.altbeacon.xamarinbeaconreference.MSG_STOP_MONITORING" />
+				<action android:name="org.altbeacon.xamarinbeaconreference.MSG_START_RANGING" />
+				<action android:name="org.altbeacon.xamarinbeaconreference.MSG_START_MONITORING" />
+			</intent-filter>
+		</service>
+		<receiver android:name="org.altbeacon.beacon.startup.StartupBroadcastReceiver">
+			<intent-filter>
+				<action android:name="android.intent.action.BOOT_COMPLETED" />
+				<action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
+				<action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
+			</intent-filter>
+		</receiver>
+	</application>
+	<uses-permission android:name="android.permission.BLUETOOTH" />
+	<uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+</manifest>

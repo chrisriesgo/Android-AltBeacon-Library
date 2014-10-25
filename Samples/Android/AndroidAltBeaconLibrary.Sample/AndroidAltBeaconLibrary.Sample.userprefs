@@ -1,0 +1,19 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" PreferredExecutionTarget="Android.92a4398e" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="MainActivity.cs">
+    <Files>
+      <File FileName="MainActivity.cs" Line="11" Column="11" />
+      <File FileName="../../../../Xamarin-Android-Beacon-Library-Reference/AndroidBeaconLibraryReference/MainActivity.cs" Line="1" Column="1" />
+      <File FileName="BackgroundActivity.cs" Line="1" Column="1" />
+      <File FileName="../../../../Xamarin-Android-Beacon-Library-Reference/AndroidBeaconLibraryReference/ReferenceActivity.cs" Line="1" Column="1" />
+      <File FileName="RangeNotifier.cs" Line="41" Column="41" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches>
+    <Watch file="../../../../../../Downloads/leankit-mobile/LeanKit.iOS/Renderers/CustomEditorRenderer.cs" line="77" offsetX="582" offsetY="1596" expression="Control" liveUpdate="False" />
+    <Watch file="../../../../../../Downloads/leankit-mobile/LeanKit.Forms/Services/UserLoginService.cs" line="129" offsetX="441" offsetY="2226" expression="ex" liveUpdate="False" />
+  </MonoDevelop.Ide.DebuggingService.PinnedWatches>
+</Properties>

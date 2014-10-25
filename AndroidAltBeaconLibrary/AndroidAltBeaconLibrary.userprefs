@@ -1,0 +1,18 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" PreferredExecutionTarget="Android.92a4398e" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="ModelSpecificDistanceUpdater.cs">
+    <Files>
+      <File FileName="ModelSpecificDistanceUpdater.cs" Line="12" Column="12" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/chrisriesgo/Projects/GitHub/Xamarin-Android-Beacon-Library-Reference/AndroidBeaconLibraryReference/MainActivity.cs" line="144" column="1" />
+      <Breakpoint file="/Users/chrisriesgo/Projects/GitHub/Xamarin-Android-Beacon-Library-Reference/AndroidBeaconLibraryReference/MainActivity.cs" line="186" column="37" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches>
+    <Watch file="../../../../Downloads/leankit-mobile/LeanKit.iOS/Renderers/CustomEditorRenderer.cs" line="77" offsetX="582" offsetY="1596" expression="Control" liveUpdate="False" />
+    <Watch file="../../../../Downloads/leankit-mobile/LeanKit.Forms/Services/UserLoginService.cs" line="129" offsetX="441" offsetY="2226" expression="ex" liveUpdate="False" />
+  </MonoDevelop.Ide.DebuggingService.PinnedWatches>
+</Properties>
