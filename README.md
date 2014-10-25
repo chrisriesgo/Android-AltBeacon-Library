@@ -7,7 +7,7 @@ A Xamarin.Android binding of the [AltBeacon Android Beacon Library](https://gith
 
 1. Clone this GitHub Repository
 2. Build the solution. (Generating a referable dll)
-4. Add the library as a reference to your Xamarin.Android application 
+3. Add the library as a reference to your Xamarin.Android application 
 
 ## Reference Application
 
@@ -17,7 +17,13 @@ A simple [sample application](https://github.com/chrisriesgo/Android-AltBeacon-L
 ## Xamarin Component
 *Forthcoming*
 
+## Changes
 
-## Questions?  Have I Missed Something?
+v2.0
+
+- Initial binding of the android-beacon-library
+
+
+## Have I Missed Something?
 
 Log a new issue, or fork this repository, and submit a pull request
