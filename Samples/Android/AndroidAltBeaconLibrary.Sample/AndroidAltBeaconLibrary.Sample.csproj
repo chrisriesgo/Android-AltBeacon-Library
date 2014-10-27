@@ -36,6 +36,7 @@
     <WarningLevel>4</WarningLevel>
     <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
     <ConsolePause>false</ConsolePause>
+    <AndroidSupportedAbis>armeabi;armeabi-v7a;x86</AndroidSupportedAbis>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -61,9 +62,11 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\Strings.xml" />
-    <AndroidResource Include="Resources\drawable\Icon.png" />
     <AndroidResource Include="Resources\layout\ActivityBackground.axml" />
     <AndroidResource Include="Resources\layout\MainActivity.axml" />
+    <AndroidResource Include="Resources\layout\ListItem.axml" />
+    <AndroidResource Include="Resources\drawable\altbeacon.png" />
+    <AndroidResource Include="Resources\values\Style.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
 </Project>

@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="org.altbeacon.androidaltbeaconsample">
 	<uses-sdk android:minSdkVersion="18" />
-	<application android:label="AltBeacon Sample">
+	<application android:label="AltBeacon Sample" android:icon="@drawable/altbeacon">
 		<service android:enabled="true" android:exported="true" android:isolatedProcess="false" android:label="Beacon" android:name="org.altbeacon.beacon.service.BeaconService">
 		</service>
 		<service android:enabled="true" android:name="org.altbeacon.beacon.BeaconIntentProcessor">

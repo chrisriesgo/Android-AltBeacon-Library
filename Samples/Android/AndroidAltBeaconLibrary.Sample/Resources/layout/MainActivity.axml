@@ -3,27 +3,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#ffffffff"
     android:id="@+id/layout">
-    <EditText
-        android:id="@+id/monitoringText"
+    <ListView
+        android:id="@+id/list"
         android:layout_width="match_parent"
-        android:layout_height="400dp"
+        android:layout_height="match_parent"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/backgroundButton"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="5dp"
         android:ems="10"
-        android:gravity="left|top"
-        android:inputType="textMultiLine">
+        android:gravity="left|top">
         <requestFocus />
-    </EditText>
-    <TextView
-        android:id="@+id/monitoringEventsText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/backgroundButton"
-        android:layout_marginTop="17dp"
-        android:text="Events:" />
+    </ListView>
     <Button
         android:id="@+id/startButton"
         android:layout_width="wrap_content"
