@@ -15,7 +15,7 @@ A simple [sample application](https://github.com/chrisriesgo/Android-AltBeacon-L
 
 
 ## Xamarin Component
-*Forthcoming*
+The [Android AltBeacon Library](http://components.xamarin.com/view/android-altbeacon-library) component is available in the Xamarin Component Store.
 
 ## Changes
 
