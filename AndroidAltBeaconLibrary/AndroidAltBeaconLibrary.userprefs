@@ -1,9 +1,16 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" PreferredExecutionTarget="Android.92a4398e" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" PreferredExecutionTarget="Android.AndroidWearRound" />
   <MonoDevelop.Ide.Workbench ActiveDocument="ModelSpecificDistanceUpdater.cs">
     <Files>
-      <File FileName="ModelSpecificDistanceUpdater.cs" Line="12" Column="12" />
+      <File FileName="ModelSpecificDistanceUpdater.cs" Line="3" Column="3" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State expanded="True" selected="True">
+          <Node name="AndroidAltBeaconLibrary" expanded="True" />
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>

@@ -1,0 +1,5 @@
+﻿<Properties>
+  <DisabledProjects>
+    <String>iOS/AltBeaconLibrary.Sample.iOS.csproj</String>
+  </DisabledProjects>
+</Properties>
