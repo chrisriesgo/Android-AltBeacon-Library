@@ -9,12 +9,13 @@ using Android.Widget;
 using Android.OS;
 
 using Xamarin.Forms.Platform.Android;
+using AltBeaconOrg.BoundBeacon;
 
 
 namespace AltBeaconLibrary.Sample.Android
 {
-	[Activity(Label = "AltBeaconLibrary.Sample.Android.Android", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
-	public class MainActivity : AndroidActivity
+	[Activity(Label = "AltBeaconLibrary.Sample.Android.Android", MainLauncher = true]
+	public class MainActivity : AndroidActivity, IBeaconConsumer
 	{
 		protected override void OnCreate(Bundle bundle)
 		{
@@ -23,6 +24,11 @@ namespace AltBeaconLibrary.Sample.Android
 			Xamarin.Forms.Forms.Init(this, bundle);
 
 			SetPage(App.GetMainPage());
+		}
+
+		public void OnBeaconServiceConnect()
+		{
+			Console.WriteLine("Starting");
 		}
 	}
 }
