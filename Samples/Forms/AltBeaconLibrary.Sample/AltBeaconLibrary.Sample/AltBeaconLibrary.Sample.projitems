@@ -11,5 +11,10 @@
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)App.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)IAltBeaconService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MainPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ListItemView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ListChangedEventArgs.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SharedBeacon.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)BeaconViewModel.cs" />
   </ItemGroup>
 </Project>

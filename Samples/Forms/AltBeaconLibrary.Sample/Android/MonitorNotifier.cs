@@ -1,7 +1,7 @@
 ﻿using System;
 using AltBeaconOrg.BoundBeacon;
 
-namespace AltBeaconLibrary.Sample.Android
+namespace AltBeaconLibrary.Sample.Droid
 {
 	public class MonitorEventArgs : EventArgs
 	{

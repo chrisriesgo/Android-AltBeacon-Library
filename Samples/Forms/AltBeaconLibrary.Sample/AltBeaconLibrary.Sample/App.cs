@@ -3,31 +3,16 @@ using Xamarin.Forms;
 
 namespace AltBeaconLibrary.Sample
 {
-	public class App
+	public class App : Application
 	{
+		public App()
+		{
+			MainPage = App.GetMainPage();
+		}
+
 		public static Page GetMainPage()
 		{	
-			return new PageOne();
-		}
-	}
-
-	public class PageOne : ContentPage
-	{
-		public PageOne()
-		{
-			Content = new Label {
-				Text = "Hello, Forms!",
-				VerticalOptions = LayoutOptions.CenterAndExpand,
-				HorizontalOptions = LayoutOptions.CenterAndExpand,
-			};
-		}
-
-		protected override void OnAppearing()
-		{
-			base.OnAppearing();
-
-			var beaconService = DependencyService.Get<IAltBeaconService>();
+			return new MainPage();
 		}
 	}
 }
-

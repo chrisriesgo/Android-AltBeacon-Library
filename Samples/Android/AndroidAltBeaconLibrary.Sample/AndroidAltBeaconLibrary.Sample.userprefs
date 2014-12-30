@@ -1,17 +1,36 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" PreferredExecutionTarget="Android.AndroidWearRound" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="MainActivity.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.92a4398e" />
+  <MonoDevelop.Ide.Workbench>
     <Files>
-      <File FileName="MainActivity.cs" Line="5" Column="5" />
-      <File FileName="Resources/values/Style.xml" Line="6" Column="6" />
+      <File FileName="MainActivity.cs" Line="21" Column="21" />
+      <File FileName="../../Forms/AltBeaconLibrary.Sample/AltBeaconLibrary.Sample/IAltBeaconService.cs" Line="1" Column="1" />
+      <File FileName="../../Forms/AltBeaconLibrary.Sample/Android/Services/AltBeaconService.cs" Line="3" Column="3" />
+      <File FileName="../../Forms/AltBeaconLibrary.Sample/AltBeaconLibrary.Sample/App.cs" Line="67" Column="67" />
+      <File FileName="../../Forms/AltBeaconLibrary.Sample/Android/Properties/AndroidManifest.xml" Line="148" Column="148" />
+      <File FileName="../../Forms/AltBeaconLibrary.Sample/Android/MainActivity.cs" Line="1" Column="1" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State expanded="True">
+          <Node name="AltBeaconLibrary.Sample" expanded="True" />
+          <Node name="AltBeaconLibrary.Sample.Android" expanded="True">
+            <Node name="Properties" expanded="True" />
+            <Node name="Services" expanded="True" />
+            <Node name="MainActivity.cs" selected="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/chrisriesgo/Projects/GitHub/Android-AltBeacon-Library/Samples/Forms/AltBeaconLibrary.Sample/Android/Services/AltBeaconService.cs" line="123" column="16" />
+      <Breakpoint file="/Users/chrisriesgo/Projects/GitHub/Android-AltBeacon-Library/Samples/Android/AndroidAltBeaconLibrary.Sample/MainActivity.cs" line="298" column="1" />
+      <Breakpoint file="/Users/chrisriesgo/Projects/GitHub/Android-AltBeacon-Library/Samples/Forms/AltBeaconLibrary.Sample/Android/Services/AltBeaconService.cs" line="108" column="1" />
+      <Breakpoint file="/Users/chrisriesgo/Projects/GitHub/Android-AltBeacon-Library/Samples/Forms/AltBeaconLibrary.Sample/Android/Services/AltBeaconService.cs" line="88" column="1" />
+      <Breakpoint file="/Users/chrisriesgo/Projects/GitHub/Android-AltBeacon-Library/Samples/Forms/AltBeaconLibrary.Sample/Android/MainActivity.cs" line="31" column="34" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches>
-    <Watch file="../../../../../../Downloads/leankit-mobile/LeanKit.iOS/Renderers/CustomEditorRenderer.cs" line="77" offsetX="582" offsetY="1596" expression="Control" liveUpdate="False" />
-    <Watch file="../../../../../../Downloads/leankit-mobile/LeanKit.Forms/Services/UserLoginService.cs" line="129" offsetX="441" offsetY="2226" expression="ex" liveUpdate="False" />
-  </MonoDevelop.Ide.DebuggingService.PinnedWatches>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.AndroidAltBeaconLibrary.Sample MonoForAntroid.PreferredDevice="Nexus 4" />
 </Properties>

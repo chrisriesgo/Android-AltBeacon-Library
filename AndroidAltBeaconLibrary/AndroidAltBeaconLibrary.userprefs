@@ -1,25 +1,17 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" PreferredExecutionTarget="Android.AndroidWearRound" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="ModelSpecificDistanceUpdater.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" PreferredExecutionTarget="Android.Nexus 4 (KitKat)" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="../../SwipeListView/SwipeListView/Transforms/Metadata.xml">
     <Files>
-      <File FileName="ModelSpecificDistanceUpdater.cs" Line="3" Column="3" />
+      <File FileName="../../SwipeListView/SwipeListView/Transforms/Metadata.xml" Line="15" Column="15" />
+      <File FileName="../../SwipeListView/SwipeListView/Partial_SwipeListViewListenerDispatcher.cs" Line="1" Column="1" />
+      <File FileName="../../SwipeListView/SwipeListView/Partial_SwipeListView.cs" Line="1" Column="1" />
+      <File FileName="../../SwipeListView/SwipeListView/obj/Debug/generated/src/FortySevenDeg.SwipeList.SwipeListView.cs" Line="1" Column="1" />
+      <File FileName="Transforms/Metadata.xml" Line="1" Column="1" />
+      <File FileName="../../SwipeListView/SwipeListView/obj/Release/api.xml" Line="1" Column="1" />
     </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State expanded="True" selected="True">
-          <Node name="AndroidAltBeaconLibrary" expanded="True" />
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/chrisriesgo/Projects/GitHub/Xamarin-Android-Beacon-Library-Reference/AndroidBeaconLibraryReference/MainActivity.cs" line="144" column="1" />
-      <Breakpoint file="/Users/chrisriesgo/Projects/GitHub/Xamarin-Android-Beacon-Library-Reference/AndroidBeaconLibraryReference/MainActivity.cs" line="186" column="37" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches>
-    <Watch file="../../../../Downloads/leankit-mobile/LeanKit.iOS/Renderers/CustomEditorRenderer.cs" line="77" offsetX="582" offsetY="1596" expression="Control" liveUpdate="False" />
-    <Watch file="../../../../Downloads/leankit-mobile/LeanKit.Forms/Services/UserLoginService.cs" line="129" offsetX="441" offsetY="2226" expression="ex" liveUpdate="False" />
-  </MonoDevelop.Ide.DebuggingService.PinnedWatches>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

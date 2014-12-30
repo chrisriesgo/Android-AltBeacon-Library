@@ -1,23 +1,39 @@
 ﻿using System;
 using AltBeaconOrg.BoundBeacon;
-using Android.Content;
-using AltBeaconLibrary.Sample.Android.Services;
+using AltBeaconLibrary.Sample.Droid.Services;
+using Android.Widget;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using System.Linq;
+using Android.App;
 
 [assembly: Xamarin.Forms.Dependency(typeof(AltBeaconService))]
 
-namespace AltBeaconLibrary.Sample.Android.Services
+namespace AltBeaconLibrary.Sample.Droid.Services
 {
-	public class AltBeaconService : Java.Lang.Object, IAltBeaconService, IBeaconConsumer
+	public class AltBeaconService : Java.Lang.Object, IAltBeaconService
 	{
-		private readonly MonitorNotifier monitorNotifier;
+		private readonly MonitorNotifier _monitorNotifier;
+		private readonly RangeNotifier _rangeNotifier;
 		private BeaconManager _beaconManager;
+
+		Region _tagRegion;
+
+		Region _emptyRegion;
+		private ListView _list;
+		private readonly List<Beacon> _data;
 
 		public AltBeaconService()
 		{
-			monitorNotifier = new MonitorNotifier();
+			_monitorNotifier = new MonitorNotifier();
+			_rangeNotifier = new RangeNotifier();
+			_data = new List<Beacon>();
 		}
 
-		public BeaconManager BeaconManager
+		public event EventHandler<ListChangedEventArgs> ListChanged;
+		public event EventHandler DataClearing;
+
+		public BeaconManager BeaconManagerImpl
 		{
 			get {
 				if (_beaconManager == null)
@@ -28,28 +44,50 @@ namespace AltBeaconLibrary.Sample.Android.Services
 			}
 		}
 
-		public void StartMonitoring(string identifier, bool monitorRanging)
+		public void StartMonitoring(string identifier)
 		{
-			// TODO  Change this ..
-			var dd = BeaconManager;
+			BeaconManagerImpl.SetForegroundBetweenScanPeriod(5000); // 5000 milliseconds
+
+			BeaconManagerImpl.SetMonitorNotifier(_monitorNotifier); 
+			_beaconManager.StartMonitoringBeaconsInRegion(_tagRegion);
+			_beaconManager.StartMonitoringBeaconsInRegion(_emptyRegion);
+		}
+
+		public void StartRanging(string identifier)
+		{
+			BeaconManagerImpl.SetForegroundBetweenScanPeriod(5000); // 5000 milliseconds
+
+			BeaconManagerImpl.SetRangeNotifier(_rangeNotifier);
+			_beaconManager.StartRangingBeaconsInRegion(_tagRegion);
+			_beaconManager.StartRangingBeaconsInRegion(_emptyRegion);
+		}
+
+		public void InitializeService()
+		{
+			_beaconManager = InitializeBeaconManager();
 		}
 
 		private BeaconManager InitializeBeaconManager()
 		{
 			// Enable the BeaconManager 
-			BeaconManager bm = BeaconManager.GetInstanceForApplication(ApplicationContext);
+			BeaconManager bm = BeaconManager.GetInstanceForApplication(Xamarin.Forms.Forms.Context);
 
 			var iBeaconParser = new BeaconParser();
 			//	Estimote > 2013
 			iBeaconParser.SetBeaconLayout("m:2-3=0215,i:4-19,i:20-21,i:22-23,p:24-24");
 			bm.BeaconParsers.Add(iBeaconParser);
 
-			bm.Bind(this);
-			bm.SetBackgroundMode(false);
+			_monitorNotifier.EnterRegionComplete += EnteredRegion;
+			_monitorNotifier.ExitRegionComplete += ExitedRegion;
+			_monitorNotifier.DetermineStateForRegionComplete += DeterminedStateForRegionComplete;
+			_rangeNotifier.DidRangeBeaconsInRegionComplete += RangingBeaconsInRegion;
 
-			monitorNotifier.EnterRegionComplete += EnteredRegion;
-			monitorNotifier.ExitRegionComplete += ExitedRegion;
-			monitorNotifier.DetermineStateForRegionComplete += DeterminedStateForRegionComplete;
+			_tagRegion = new AltBeaconOrg.BoundBeacon.Region("myUniqueBeaconId", Identifier.Parse("E4C8A4FC-F68B-470D-959F-29382AF72CE7"), null, null);
+			_emptyRegion = new AltBeaconOrg.BoundBeacon.Region("myEmptyBeaconId", null, null, null);
+
+			bm.SetBackgroundMode(false);
+			bm.Bind((IBeaconConsumer)Xamarin.Forms.Forms.Context);
+
 			return bm;
 		}
 
@@ -68,62 +106,89 @@ namespace AltBeaconLibrary.Sample.Android.Services
 			Console.WriteLine("EnteredRegion");
 		}
 
-//		protected override void Dispose(bool disposing)
-//		{
-//			base.Dispose(disposing);
-//			StopAllMonitoring();
-//		}
-
-		#region IBeaconConsumer Implementation
-
-		/// <summary>
-		/// Binds the service.
-		/// </summary>
-		/// <returns><c>true</c>, if service was bound, <c>false</c> otherwise.</returns>
-		/// <param name="service">Service.</param>
-		/// <param name="conn">Conn.</param>
-		/// <param name="flags">Flags.</param>
-		public bool BindService(Intent service, IServiceConnection conn, Bind flags)
+		async void RangingBeaconsInRegion(object sender, RangeEventArgs e)
 		{
-			return true;
-		}
+			await ClearData();
 
-		/// <summary>
-		/// Gets the application context.
-		/// </summary>
-		/// <value>The application context.</value>
-		public Context ApplicationContext
-		{
-			get
+			var allBeacons = new List<Beacon>();
+			if(e.Beacons.Count > 0)
 			{
-				return Xamarin.Forms.Forms.Context;
+				var beaconNumber = 0;
+				foreach(var b in e.Beacons)
+				{
+					allBeacons.Add(b);
+				}
+
+				var orderedBeacons = allBeacons.OrderBy(b => b.Distance).ToList();
+
+				orderedBeacons.ForEach(async (firstBeacon) =>
+				{
+					beaconNumber++;
+					await UpdateData(firstBeacon);
+				});
+			}
+			else
+			{
+				// unknown
+				await ClearData();
 			}
 		}
-			
-		/// <summary>
-		/// Raises the beacon service connect event.
-		/// </summary>
-		public void OnBeaconServiceConnect()
+
+		private async Task UpdateData(Beacon beacon)
 		{
-			throw new NotImplementedException();
+			await Task.Run(() =>
+			{
+				if(_data.All(d => d.Id1.ToString() != beacon.Id1.ToString()))
+				{
+					((Activity)Xamarin.Forms.Forms.Context).RunOnUiThread(() =>
+					{
+						_data.Add(beacon);
+						_data.Sort((x,y) => x.Distance.CompareTo(y.Distance));
+						UpdateList();
+					});
+				}
+			});
 		}
 
-		/// <summary>
-		/// Unbinds the service.
-		/// </summary>
-		/// <param name="connection">Service connection</param>
-		public void UnbindService(IServiceConnection connection)
+		private async Task ClearData()
 		{
-			try
+			((Activity)Xamarin.Forms.Forms.Context).RunOnUiThread(() =>
 			{
-				ApplicationContext.UnbindService(connection);	
-			}
-			catch(Exception ex)
+				_data.Clear();
+				OnDataClearing();
+			});
+		}
+
+		private void OnDataClearing()
+		{
+			var handler = DataClearing;
+			if(handler != null)
 			{
-				var a = ex;
+				handler(this, EventArgs.Empty);
 			}
 		}
-		#endregion
+
+		private void UpdateList()
+		{
+			((Activity)Xamarin.Forms.Forms.Context).RunOnUiThread(() => 
+			{
+				OnListChanged();
+			});
+		}
+
+		private void OnListChanged()
+		{
+			var handler = ListChanged;
+			if(handler != null)
+			{
+				var data = new List<SharedBeacon>();
+				_data.ForEach(b =>
+				{
+					data.Add(new SharedBeacon { Id = b.Id1.ToString(), Distance = string.Format("{0:N2}m", b.Distance)});
+				});
+				handler(this, new ListChangedEventArgs(data));
+			}
+		}
 	}
 }
 
