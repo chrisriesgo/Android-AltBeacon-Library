@@ -181,10 +181,10 @@ namespace AltBeaconLibrary.Sample.Droid.Services
 			var handler = ListChanged;
 			if(handler != null)
 			{
-				var data = new List<CommonBeacon>();
+				var data = new List<SharedBeacon>();
 				_data.ForEach(b =>
 				{
-					data.Add(new CommonBeacon { Id = b.Id1.ToString(), Distance = string.Format("{0:N2}m", b.Distance)});
+					data.Add(new SharedBeacon { Id = b.Id1.ToString(), Distance = string.Format("{0:N2}m", b.Distance)});
 				});
 				handler(this, new ListChangedEventArgs(data));
 			}

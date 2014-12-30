@@ -6,15 +6,19 @@ namespace AltBeaconLibrary.Sample
 {
 	public class MainPage : ContentPage
 	{
-		ObservableCollection<CommonBeacon> _data = new ObservableCollection<CommonBeacon>();
 		ListView _list;
+		BeaconViewModel _viewModel;
 
 		public MainPage()
 		{
 			BackgroundColor = Color.White;
+			_viewModel = new BeaconViewModel();
+			_viewModel.ListChanged += (sender, e) => 
+			{
+				_list.ItemsSource = _viewModel.Data;
+			};
 
-			_data = new ObservableCollection<CommonBeacon>();
-
+			BindingContext = _viewModel;
 			Content = BuildContent();
 		}
 
@@ -24,8 +28,9 @@ namespace AltBeaconLibrary.Sample
 				VerticalOptions = LayoutOptions.FillAndExpand,
 				ItemTemplate = new DataTemplate(typeof(ListItemView)),
 				RowHeight = 90,
-				ItemsSource = _data,
 			};
+
+			_list.SetBinding(ListView.ItemsSourceProperty, "Data");
 
 			return _list;
 		}
@@ -33,27 +38,7 @@ namespace AltBeaconLibrary.Sample
 		protected override void OnAppearing()
 		{
 			base.OnAppearing();
-
-			var beaconService = DependencyService.Get<IAltBeaconService>();
-			beaconService.ListChanged += (sender, e) => 
-			{
-				_data = new ObservableCollection<CommonBeacon>(e.Data);
-				_list.ItemsSource = _data;
-			};
-			beaconService.DataClearing += (sender, e) => 
-			{
-				_data.Clear();
-				_list.ItemsSource = _data;
-			};
-
-			beaconService.InitializeService();
+			_viewModel.Init();
 		}
 	}
-
-	public class CommonBeacon
-	{
-		public string Id { get; set; }
-		public string Distance { get; set; }
-	}
 }
-
