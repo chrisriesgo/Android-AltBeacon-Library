@@ -7,7 +7,9 @@ namespace AltBeaconLibrary.Sample
 	{
 		public App()
 		{
-			MainPage = App.GetMainPage();
+			var page = App.GetMainPage();
+			NavigationPage.SetHasNavigationBar(page, true);
+			MainPage = new NavigationPage(page);
 		}
 
 		public static Page GetMainPage()

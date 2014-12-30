@@ -2,43 +2,32 @@
   <DisabledProjects>
     <String>iOS/AltBeaconLibrary.Sample.iOS.csproj</String>
   </DisabledProjects>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.92a4398e" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Android/Services/AltBeaconService.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" PreferredExecutionTarget="Android.92a4398e" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="AltBeaconLibrary.Sample/MainPage.cs">
     <Files>
-      <File FileName="AltBeaconLibrary.Sample/IAltBeaconService.cs" Line="84" Column="84" />
-      <File FileName="Android/Services/AltBeaconService.cs" Line="42" Column="42" />
-      <File FileName="Android/MainActivity.cs" Line="1" Column="1" />
-      <File FileName="AltBeaconLibrary.Sample/App.cs" Line="20" Column="20" />
-      <File FileName="AltBeaconLibrary.Sample/MainPage.cs" Line="3" Column="3" />
-      <File FileName="AltBeaconLibrary.Sample/ListItemView.cs" Line="17" Column="17" />
+      <File FileName="AltBeaconLibrary.Sample/IAltBeaconService.cs" Line="35" Column="35" />
+      <File FileName="Android/Services/AltBeaconService.cs" Line="23" Column="23" />
+      <File FileName="Android/MainActivity.cs" Line="71" Column="71" />
+      <File FileName="AltBeaconLibrary.Sample/App.cs" Line="2" Column="2" />
+      <File FileName="AltBeaconLibrary.Sample/MainPage.cs" Line="2" Column="2" />
+      <File FileName="AltBeaconLibrary.Sample/BeaconViewModel.cs" Line="21" Column="21" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
-          <Node name="AltBeaconLibrary.Sample" expanded="True" />
-          <Node name="AltBeaconLibrary.Sample.Droid" expanded="True" selected="True">
+          <Node name="AltBeaconLibrary.Sample.Droid" expanded="True">
             <Node name="Properties" expanded="True" />
             <Node name="Services" expanded="True" />
+            <Node name="MainActivity.cs" selected="True" />
           </Node>
         </State>
-      </Pad>
-      <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State />
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/Users/chrisriesgo/Projects/GitHub/Android-AltBeacon-Library/Samples/Android/AndroidAltBeaconLibrary.Sample/MainActivity.cs" line="298" column="1" />
-      <Breakpoint file="/Users/chrisriesgo/Projects/GitHub/Android-AltBeacon-Library/Samples/Forms/AltBeaconLibrary.Sample/Android/Services/AltBeaconService.cs" line="86" column="1" />
-      <Breakpoint file="/Users/chrisriesgo/Projects/GitHub/Android-AltBeacon-Library/Samples/Forms/AltBeaconLibrary.Sample/Android/Services/AltBeaconService.cs" line="81" column="1" />
-      <Breakpoint file="/Users/chrisriesgo/Projects/GitHub/Android-AltBeacon-Library/Samples/Forms/AltBeaconLibrary.Sample/Android/Services/AltBeaconService.cs" line="76" column="1" />
-      <Breakpoint file="/Users/chrisriesgo/Projects/GitHub/Android-AltBeacon-Library/Samples/Forms/AltBeaconLibrary.Sample/Android/MainActivity.cs" line="33" column="1" />
-      <Breakpoint file="/Users/chrisriesgo/Projects/GitHub/Android-AltBeacon-Library/Samples/Forms/AltBeaconLibrary.Sample/Android/Services/AltBeaconService.cs" line="56" column="1" />
-      <Breakpoint file="/Users/chrisriesgo/Projects/GitHub/Android-AltBeacon-Library/Samples/Forms/AltBeaconLibrary.Sample/Android/Services/AltBeaconService.cs" line="157" column="1" />
-      <Breakpoint file="/Users/chrisriesgo/Projects/GitHub/Android-AltBeacon-Library/Samples/Forms/AltBeaconLibrary.Sample/AltBeaconLibrary.Sample/MainPage.cs" line="44" column="60" />
-      <Breakpoint file="/Users/chrisriesgo/Projects/GitHub/Android-AltBeacon-Library/Samples/Forms/AltBeaconLibrary.Sample/Android/Services/AltBeaconService.cs" line="96" column="1" />
-      <Breakpoint file="/Users/chrisriesgo/Projects/GitHub/Android-AltBeacon-Library/Samples/Forms/AltBeaconLibrary.Sample/Android/Services/AltBeaconService.cs" line="204" column="1" />
+      <Breakpoint file="/Users/chrisriesgo/Projects/GitHub/Android-AltBeacon-Library/Samples/Forms/AltBeaconLibrary.Sample/Android/MainActivity.cs" line="34" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

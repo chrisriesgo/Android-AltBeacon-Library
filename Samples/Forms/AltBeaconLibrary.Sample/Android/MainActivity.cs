@@ -9,7 +9,10 @@ using AltBeaconOrg.BoundBeacon;
 
 namespace AltBeaconLibrary.Sample.Droid
 {
-	[Activity(Label = "AltBeaconLibrary.Sample.Android.Android", MainLauncher = true)]
+	[Activity(Label = "AltBeacon Forms Sample", 
+		Theme = "@style/Theme.AltBeacon",
+		Icon = "@drawable/altbeacon",
+		MainLauncher = true)]
 	public class MainActivity : FormsApplicationActivity, IBeaconConsumer
 	{
 		protected override void OnCreate(Bundle savedInstanceState)

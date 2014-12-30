@@ -80,6 +80,8 @@
     <AndroidResource Include="Resources\layout\Main.axml" />
     <AndroidResource Include="Resources\values\Strings.xml" />
     <AndroidResource Include="Resources\drawable\Icon.png" />
+    <AndroidResource Include="Resources\values\Styles.xml" />
+    <AndroidResource Include="Resources\drawable\altbeacon.png" />
   </ItemGroup>
   <Import Project="..\AltBeaconLibrary.Sample\AltBeaconLibrary.Sample.projitems" Label="Shared" Condition="Exists('..\AltBeaconLibrary.Sample\AltBeaconLibrary.Sample.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
