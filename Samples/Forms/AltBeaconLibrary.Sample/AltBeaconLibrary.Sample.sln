@@ -5,7 +5,7 @@ Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "AltBeaconLibrary.Sample", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AltBeaconLibrary.Sample.iOS", "iOS\AltBeaconLibrary.Sample.iOS.csproj", "{C25762AA-8542-4F90-B0C1-99FDFC88752F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AltBeaconLibrary.Sample.Android", "Android\AltBeaconLibrary.Sample.Android.csproj", "{AE041D34-1110-4C58-8ED9-F8FB1B9E5268}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AltBeaconLibrary.Sample.Droid", "Android\AltBeaconLibrary.Sample.Droid.csproj", "{AE041D34-1110-4C58-8ED9-F8FB1B9E5268}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,6 +53,6 @@ Global
 		{C25762AA-8542-4F90-B0C1-99FDFC88752F}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = Android\AltBeaconLibrary.Sample.Android.csproj
+		StartupItem = Android\AltBeaconLibrary.Sample.Droid.csproj
 	EndGlobalSection
 EndGlobal

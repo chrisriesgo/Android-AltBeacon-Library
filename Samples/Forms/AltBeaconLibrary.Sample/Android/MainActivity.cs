@@ -1,33 +1,30 @@
 ﻿using System;
 
 using Android.App;
-using Android.Content;
-using Android.Content.PM;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 using Android.OS;
 
 using Xamarin.Forms.Platform.Android;
 using AltBeaconOrg.BoundBeacon;
 
 
-namespace AltBeaconLibrary.Sample.Android
+namespace AltBeaconLibrary.Sample.Droid
 {
-	[Activity(Label = "AltBeaconLibrary.Sample.Android.Android", MainLauncher = true]
-	public class MainActivity : AndroidActivity, IBeaconConsumer
+	[Activity(Label = "AltBeaconLibrary.Sample.Android.Android", MainLauncher = true)]
+	public class MainActivity : FormsApplicationActivity, IBeaconConsumer
 	{
-		protected override void OnCreate(Bundle bundle)
+		protected override void OnCreate(Bundle savedInstanceState)
 		{
-			base.OnCreate(bundle);
+			base.OnCreate(savedInstanceState);
 
-			Xamarin.Forms.Forms.Init(this, bundle);
+			Xamarin.Forms.Forms.Init(this, savedInstanceState);
 
-			SetPage(App.GetMainPage());
+			LoadApplication(new App());
 		}
 
 		public void OnBeaconServiceConnect()
 		{
+			var beaconService = Xamarin.Forms.DependencyService.Get<IAltBeaconService>();
+			beaconService.OnBeaconServiceConnect();
 			Console.WriteLine("Starting");
 		}
 	}
