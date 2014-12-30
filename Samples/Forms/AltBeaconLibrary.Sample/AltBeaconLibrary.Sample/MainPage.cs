@@ -14,10 +14,6 @@ namespace AltBeaconLibrary.Sample
 			BackgroundColor = Color.White;
 
 			_data = new ObservableCollection<CommonBeacon>();
-//			_data.Add(new CommonBeacon {
-//				Id = "E4C8A4FC-F68B-470D-959F-29382AF72CE7",
-//				Distance = "1.3m",
-//			});
 
 			Content = BuildContent();
 		}
@@ -42,9 +38,15 @@ namespace AltBeaconLibrary.Sample
 			beaconService.ListChanged += (sender, e) => 
 			{
 				_data = new ObservableCollection<CommonBeacon>(e.Data);
+				_list.ItemsSource = _data;
 			};
-			beaconService.StartMonitoring("");
-			beaconService.StartRanging("");
+			beaconService.DataClearing += (sender, e) => 
+			{
+				_data.Clear();
+				_list.ItemsSource = _data;
+			};
+
+			beaconService.InitializeService();
 		}
 	}
 

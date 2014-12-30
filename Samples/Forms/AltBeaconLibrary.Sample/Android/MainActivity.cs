@@ -24,8 +24,9 @@ namespace AltBeaconLibrary.Sample.Droid
 		public void OnBeaconServiceConnect()
 		{
 			var beaconService = Xamarin.Forms.DependencyService.Get<IAltBeaconService>();
-			beaconService.OnBeaconServiceConnect();
-			Console.WriteLine("Starting");
+
+			beaconService.StartMonitoring("E4C8A4FC-F68B-470D-959F-29382AF72CE7");
+			beaconService.StartRanging("E4C8A4FC-F68B-470D-959F-29382AF72CE7");
 		}
 	}
 }
