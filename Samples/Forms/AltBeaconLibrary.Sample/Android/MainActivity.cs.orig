@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 
 using Android.App;
 using Android.OS;
@@ -9,7 +9,11 @@ using AltBeaconOrg.BoundBeacon;
 
 namespace AltBeaconLibrary.Sample.Droid
 {
+<<<<<<< HEAD
+	[Activity(Label = "AltBeacon Forms Sample", 
+=======
 	[Activity(Label = "AltBeacon Forms Sample",
+>>>>>>> new-forms
 		Theme = "@style/Theme.AltBeacon",
 		Icon = "@drawable/altbeacon",
 		MainLauncher = true)]

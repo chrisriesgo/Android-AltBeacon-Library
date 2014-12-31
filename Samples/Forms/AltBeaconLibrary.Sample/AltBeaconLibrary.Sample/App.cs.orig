@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using Xamarin.Forms;
 
 namespace AltBeaconLibrary.Sample
@@ -7,7 +7,13 @@ namespace AltBeaconLibrary.Sample
 	{
 		public App()
 		{
+<<<<<<< HEAD
+			var page = App.GetMainPage();
+			NavigationPage.SetHasNavigationBar(page, true);
+			MainPage = new NavigationPage(page);
+=======
 			MainPage = new NavigationPage( App.GetMainPage() );
+>>>>>>> new-forms
 		}
 
 		public static Page GetMainPage()

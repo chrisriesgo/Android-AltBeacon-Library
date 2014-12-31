@@ -79,6 +79,10 @@
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Main.axml" />
     <AndroidResource Include="Resources\values\Strings.xml" />
+<<<<<<< HEAD
+    <AndroidResource Include="Resources\drawable\Icon.png" />
+=======
+>>>>>>> new-forms
     <AndroidResource Include="Resources\values\Styles.xml" />
     <AndroidResource Include="Resources\drawable\altbeacon.png" />
   </ItemGroup>

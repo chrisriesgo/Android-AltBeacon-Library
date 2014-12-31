@@ -12,6 +12,8 @@ namespace AltBeaconLibrary.Sample
 		public MainPage()
 		{
 			BackgroundColor = Color.White;
+			Title = "AltBeacon Forms Sample";
+
 			_viewModel = new BeaconViewModel();
 			_viewModel.ListChanged += (sender, e) => 
 			{
