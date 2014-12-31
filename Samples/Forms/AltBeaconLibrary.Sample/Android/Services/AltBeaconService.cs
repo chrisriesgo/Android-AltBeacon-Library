@@ -44,24 +44,6 @@ namespace AltBeaconLibrary.Sample.Droid.Services
 			}
 		}
 
-		public void StartMonitoring(string identifier)
-		{
-			BeaconManagerImpl.SetForegroundBetweenScanPeriod(5000); // 5000 milliseconds
-
-			BeaconManagerImpl.SetMonitorNotifier(_monitorNotifier); 
-			_beaconManager.StartMonitoringBeaconsInRegion(_tagRegion);
-			_beaconManager.StartMonitoringBeaconsInRegion(_emptyRegion);
-		}
-
-		public void StartRanging(string identifier)
-		{
-			BeaconManagerImpl.SetForegroundBetweenScanPeriod(5000); // 5000 milliseconds
-
-			BeaconManagerImpl.SetRangeNotifier(_rangeNotifier);
-			_beaconManager.StartRangingBeaconsInRegion(_tagRegion);
-			_beaconManager.StartRangingBeaconsInRegion(_emptyRegion);
-		}
-
 		public void InitializeService()
 		{
 			_beaconManager = InitializeBeaconManager();
@@ -89,6 +71,24 @@ namespace AltBeaconLibrary.Sample.Droid.Services
 			bm.Bind((IBeaconConsumer)Xamarin.Forms.Forms.Context);
 
 			return bm;
+		}
+
+		public void StartMonitoring()
+		{
+			BeaconManagerImpl.SetForegroundBetweenScanPeriod(5000); // 5000 milliseconds
+
+			BeaconManagerImpl.SetMonitorNotifier(_monitorNotifier); 
+			_beaconManager.StartMonitoringBeaconsInRegion(_tagRegion);
+			_beaconManager.StartMonitoringBeaconsInRegion(_emptyRegion);
+		}
+
+		public void StartRanging()
+		{
+			BeaconManagerImpl.SetForegroundBetweenScanPeriod(5000); // 5000 milliseconds
+
+			BeaconManagerImpl.SetRangeNotifier(_rangeNotifier);
+			_beaconManager.StartRangingBeaconsInRegion(_tagRegion);
+			_beaconManager.StartRangingBeaconsInRegion(_emptyRegion);
 		}
 
 		private void DeterminedStateForRegionComplete(object sender, MonitorEventArgs e)
