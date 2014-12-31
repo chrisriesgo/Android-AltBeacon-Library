@@ -41,11 +41,30 @@ namespace AltBeaconLibrary.Sample.Droid
 			}
 		}
 		
+		public partial class Color
+		{
+			
+			// aapt resource value: 0x7f050000
+			public const int custom_theme_color = 2131034112;
+			
+			// aapt resource value: 0x7f050001
+			public const int text_theme_color = 2131034113;
+			
+			static Color()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Color()
+			{
+			}
+		}
+		
 		public partial class Drawable
 		{
 			
 			// aapt resource value: 0x7f020000
-			public const int Icon = 2130837504;
+			public const int altbeacon = 2130837504;
 			
 			static Drawable()
 			{
@@ -60,8 +79,8 @@ namespace AltBeaconLibrary.Sample.Droid
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f050000
-			public const int myButton = 2131034112;
+			// aapt resource value: 0x7f070000
+			public const int myButton = 2131165184;
 			
 			static Id()
 			{
@@ -104,6 +123,28 @@ namespace AltBeaconLibrary.Sample.Droid
 			}
 			
 			private String()
+			{
+			}
+		}
+		
+		public partial class Style
+		{
+			
+			// aapt resource value: 0x7f060002
+			public const int CustomActionBar = 2131099650;
+			
+			// aapt resource value: 0x7f060000
+			public const int CustomTheme = 2131099648;
+			
+			// aapt resource value: 0x7f060001
+			public const int Theme_AltBeacon = 2131099649;
+			
+			static Style()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Style()
 			{
 			}
 		}
