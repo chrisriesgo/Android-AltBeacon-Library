@@ -30,4 +30,7 @@
   <attr path="/api/package[@name='org.altbeacon.beacon']/interface[@name='BeaconConsumer']/method[@name='bindService' and count(parameter)=3 and parameter[1][@type='android.content.Intent'] and parameter[2][@type='android.content.ServiceConnection'] and parameter[3][@type='int']]/parameter[@name='p0']" name="name">intent</attr>
   <attr path="/api/package[@name='org.altbeacon.beacon']/interface[@name='BeaconConsumer']/method[@name='bindService' and count(parameter)=3 and parameter[1][@type='android.content.Intent'] and parameter[2][@type='android.content.ServiceConnection'] and parameter[3][@type='int']]/parameter[@name='p1']" name="name">serviceConnection</attr>
   <attr path="/api/package[@name='org.altbeacon.beacon']/interface[@name='BeaconConsumer']/method[@name='bindService' and count(parameter)=3 and parameter[1][@type='android.content.Intent'] and parameter[2][@type='android.content.ServiceConnection'] and parameter[3][@type='int']]/parameter[@name='p2']" name="name">flags</attr>
+
+  <attr path="/api/package[@name='org.altbeacon.beacon']/class[@name='BeaconManager']/method[@name='getInstanceForApplication' and count(parameter)=1 and parameter[1][@type='android.content.Context']]/parameter[@name='p0']" name="name">context</attr>
+  <attr path="/api/package[@name='org.altbeacon.beacon']/class[@name='BeaconManager']/method[@name='bind' and count(parameter)=1 and parameter[1][@type='org.altbeacon.beacon.BeaconConsumer']]/parameter[@name='p0']" name="name">beaconConsumer</attr>
 </metadata>
