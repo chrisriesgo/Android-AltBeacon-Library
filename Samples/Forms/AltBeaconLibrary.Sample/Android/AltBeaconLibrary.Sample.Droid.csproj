@@ -69,6 +69,7 @@
     <Compile Include="Services\AltBeaconService.cs" />
     <Compile Include="MonitorNotifier.cs" />
     <Compile Include="RangeNotifier.cs" />
+    <Compile Include="BeaconSimulator.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />

@@ -3,15 +3,10 @@
     <String>iOS/AltBeaconLibrary.Sample.iOS.csproj</String>
   </DisabledProjects>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" PreferredExecutionTarget="Android.Nexus 4 (KitKat)" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="../../../AndroidAltBeaconLibrary/Transforms/Metadata.xml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Android/TimedBeaconSimulator.cs">
     <Files>
-      <File FileName="../../../../SwipeListView/SwipeListView/Transforms/Metadata.xml" Line="1" Column="1" />
-      <File FileName="../../../../SwipeListView/SwipeListView/Partial_SwipeListViewListenerDispatcher.cs" Line="1" Column="1" />
-      <File FileName="../../../../SwipeListView/SwipeListView/Partial_SwipeListView.cs" Line="1" Column="1" />
-      <File FileName="../../../../SwipeListView/SwipeListView/obj/Debug/generated/src/FortySevenDeg.SwipeList.SwipeListView.cs" Line="1" Column="1" />
-      <File FileName="../../../AndroidAltBeaconLibrary/Transforms/Metadata.xml" Line="3" Column="3" />
-      <File FileName="Android/Services/AltBeaconService.cs" Line="1" Column="1" />
-      <File FileName="../../../AndroidAltBeaconLibrary/obj/Release/generated/src/AltBeaconOrg.BoundBeacon.BeaconManager.cs" Line="1" Column="1" />
+      <File FileName="Android/TimedBeaconSimulator.cs" Line="45" Column="45" />
+      <File FileName="Android/MonitorNotifier.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

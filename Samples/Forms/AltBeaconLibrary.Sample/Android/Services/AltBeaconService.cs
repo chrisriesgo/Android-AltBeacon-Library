@@ -54,6 +54,13 @@ namespace AltBeaconLibrary.Sample.Droid.Services
 			// Enable the BeaconManager 
 			BeaconManager bm = BeaconManager.GetInstanceForApplication(Xamarin.Forms.Forms.Context);
 
+			#region Set up Beacon Simulator if testing without a BLE device
+//			var beaconSimulator = new BeaconSimulator();
+//			beaconSimulator.CreateBasicSimulatedBeacons();
+//
+//			BeaconManager.BeaconSimulator = beaconSimulator;
+			#endregion
+
 			var iBeaconParser = new BeaconParser();
 			//	Estimote > 2013
 			iBeaconParser.SetBeaconLayout("m:2-3=0215,i:4-19,i:20-21,i:22-23,p:24-24");
