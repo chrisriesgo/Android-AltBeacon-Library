@@ -12,7 +12,8 @@ namespace AltBeaconLibrary.Sample.Droid
 	[Activity(Label = "AltBeacon Forms Sample",
 		Theme = "@style/Theme.AltBeacon",
 		Icon = "@drawable/altbeacon",
-		MainLauncher = true)]
+		MainLauncher = true,
+		LaunchMode = Android.Content.PM.LaunchMode.SingleInstance)]
 	public class MainActivity : FormsApplicationActivity, IBeaconConsumer
 	{
 		protected override void OnCreate(Bundle savedInstanceState)
