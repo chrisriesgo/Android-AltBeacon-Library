@@ -10,7 +10,6 @@
 		<service android:enabled="true" android:exported="false" android:isolatedProcess="false" android:label="Beacon" android:name="org.altbeacon.beacon.service.BeaconService">
 		</service>
 		<service android:enabled="true" android:exported="false" android:name="org.altbeacon.beacon.BeaconIntentProcessor">
-<!--			<meta-data android:name="background" android:value="true" />-->
 		</service>
 		<receiver android:name="org.altbeacon.beacon.startup.StartupBroadcastReceiver">
 			<intent-filter>
@@ -19,12 +18,5 @@
 				<action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
 			</intent-filter>
 		</receiver>
-<!--		<receiver android:name="altbeaconorg.boundbeacon.startup.StartupBroadcastReceiver">
-			<intent-filter>
-				<action android:name="android.intent.action.BOOT_COMPLETED" />
-				<action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
-				<action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
-			</intent-filter>
-		</receiver>-->
 	</application>
 </manifest>
