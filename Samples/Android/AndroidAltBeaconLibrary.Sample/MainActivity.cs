@@ -14,12 +14,13 @@ using Android.Widget;
 
 namespace AndroidAltBeaconLibrary.Sample
 {
-	[Activity(Label = "AltBeacon Sample", MainLauncher = true, 
+	[Activity(Label = "AltBeacon Sample", 
+		MainLauncher = true,
+		LaunchMode = Android.Content.PM.LaunchMode.SingleInstance,
 		Theme = "@style/Theme.AltBeacon",
 		Icon = "@drawable/altbeacon")]
 	public class MainActivity : Activity, IDialogInterfaceOnDismissListener, IBeaconConsumer
 	{
-		private readonly MonitorNotifier _monitorNotifier;
 		private readonly RangeNotifier _rangeNotifier;
 
 		AltBeaconOrg.BoundBeacon.Region _tagRegion, _emptyRegion;
@@ -31,7 +32,6 @@ namespace AndroidAltBeaconLibrary.Sample
 
 		public MainActivity()
 		{
-			_monitorNotifier = new MonitorNotifier();
 			_rangeNotifier = new RangeNotifier();
 			_data = new List<Beacon>();
 		}
@@ -83,34 +83,33 @@ namespace AndroidAltBeaconLibrary.Sample
 			VerityBluetooth();
 
 			_beaconManager = BeaconManager.GetInstanceForApplication(this);
-			// By default the AndroidBeaconLibrary will only find AltBeacons.  If you wish to make it
-			// find a different type of beacon, you must specify the byte layout for that beacon's
-			// advertisement with a line like below.  The example shows how to find a beacon with the
-			// same byte layout as AltBeacon but with a beaconTypeCode of 0xaabb
-			//
-			// beaconManager.getBeaconParsers().add(new BeaconParser().
-			//        setBeaconLayout("m:2-3=aabb,i:4-19,i:20-21,i:22-23,p:24-24,d:25-25"));
-			//
-			// In order to find out the proper BeaconLayout definition for other kinds of beacons, do
-			// a Google search for "setBeaconLayout" (including the quotes in your search.)
-
+//			// By default the AndroidBeaconLibrary will only find AltBeacons.  If you wish to make it
+//			// find a different type of beacon, you must specify the byte layout for that beacon's
+//			// advertisement with a line like below.  The example shows how to find a beacon with the
+//			// same byte layout as AltBeacon but with a beaconTypeCode of 0xaabb
+//			//
+//			// beaconManager.getBeaconParsers().add(new BeaconParser().
+//			//        setBeaconLayout("m:2-3=aabb,i:4-19,i:20-21,i:22-23,p:24-24,d:25-25"));
+//			//
+//			// In order to find out the proper BeaconLayout definition for other kinds of beacons, do
+//			// a Google search for "setBeaconLayout" (including the quotes in your search.)
+//
 			var iBeaconParser = new BeaconParser();
 			//	Estimote > 2013
 			iBeaconParser.SetBeaconLayout("m:2-3=0215,i:4-19,i:20-21,i:22-23,p:24-24");
 			_beaconManager.BeaconParsers.Add(iBeaconParser);
 
 			_beaconManager.Bind(this);
-			_beaconManager.SetBackgroundMode(false);
+//			_beaconManager.SetBackgroundMode(false);
 
-			_monitorNotifier.EnterRegionComplete += EnteredRegion;
-			_monitorNotifier.ExitRegionComplete += ExitedRegion;
-			_monitorNotifier.DetermineStateForRegionComplete += DeterminedStateForRegionComplete;
 			_rangeNotifier.DidRangeBeaconsInRegionComplete += RangingBeaconsInRegion;
 		}
 
 		protected override void OnResume()
 		{
 			base.OnResume();
+
+			((BeaconReferenceApplication) this.ApplicationContext).MainActivity = this;
 
 			_backgroundButton.Click += OnBackgroundClick;
 			_stopButton.Click += OnStopClick;
@@ -127,10 +126,7 @@ namespace AndroidAltBeaconLibrary.Sample
 			_stopButton.Enabled = false;
 			_startButton.Enabled = true;
 
-			_beaconManager.StopMonitoringBeaconsInRegion(_tagRegion);
 			_beaconManager.StopRangingBeaconsInRegion(_tagRegion);
-
-			_beaconManager.StopMonitoringBeaconsInRegion(_emptyRegion);
 			_beaconManager.StopRangingBeaconsInRegion(_emptyRegion);
 		}
 
@@ -141,10 +137,7 @@ namespace AndroidAltBeaconLibrary.Sample
 
 			await ClearData();
 
-			_beaconManager.StartMonitoringBeaconsInRegion(_tagRegion);
 			_beaconManager.StartRangingBeaconsInRegion(_tagRegion);
-
-			_beaconManager.StartMonitoringBeaconsInRegion(_emptyRegion);
 			_beaconManager.StartRangingBeaconsInRegion(_emptyRegion);
 		}
 
@@ -160,6 +153,8 @@ namespace AndroidAltBeaconLibrary.Sample
 			{
 				_beaconManager.SetBackgroundMode(true);
 			}
+
+			((BeaconReferenceApplication) this.ApplicationContext).MainActivity = null;
 		}
 
 		protected override void OnDestroy()
@@ -297,16 +292,12 @@ namespace AndroidAltBeaconLibrary.Sample
 		{
 			_beaconManager.SetForegroundBetweenScanPeriod(5000); // 5000 milliseconds
 
-			_beaconManager.SetMonitorNotifier(_monitorNotifier); 
 			_beaconManager.SetRangeNotifier(_rangeNotifier);
 
 			_tagRegion = new AltBeaconOrg.BoundBeacon.Region("myUniqueBeaconId", Identifier.Parse("2F234454-CF6D-4A0F-ADF2-F4911BA9FFA6"), null, null);
 			_emptyRegion = new AltBeaconOrg.BoundBeacon.Region("myEmptyBeaconId", null, null, null);
 
-			_beaconManager.StartMonitoringBeaconsInRegion(_tagRegion);
 			_beaconManager.StartRangingBeaconsInRegion(_tagRegion);
-
-			_beaconManager.StartMonitoringBeaconsInRegion(_emptyRegion);
 			_beaconManager.StartRangingBeaconsInRegion(_emptyRegion);
 
 			_startButton.Enabled = false;
