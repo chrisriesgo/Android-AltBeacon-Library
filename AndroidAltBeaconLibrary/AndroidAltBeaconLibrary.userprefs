@@ -1,15 +1,18 @@
-﻿<Properties StartupItem="AndroidAltBeaconLibrary.csproj">
+﻿<Properties StartupItem="AndroidAltBeaconLibrary.csproj" GitUserInfo="UsingGIT">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" PreferredExecutionTarget="Android.Nexus 4 (KitKat)" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Transforms/Metadata.xml">
     <Files>
-      <File FileName="../../SwipeListView/SwipeListView/Transforms/Metadata.xml" Line="1" Column="1" />
-      <File FileName="../../SwipeListView/SwipeListView/Partial_SwipeListViewListenerDispatcher.cs" Line="1" Column="1" />
-      <File FileName="../../SwipeListView/SwipeListView/Partial_SwipeListView.cs" Line="1" Column="1" />
-      <File FileName="../../SwipeListView/SwipeListView/obj/Debug/generated/src/FortySevenDeg.SwipeList.SwipeListView.cs" Line="1" Column="1" />
-      <File FileName="Transforms/Metadata.xml" Line="3" Column="3" />
-      <File FileName="../Samples/Forms/AltBeaconLibrary.Sample/Android/Services/AltBeaconService.cs" Line="1" Column="1" />
-      <File FileName="obj/Release/generated/src/AltBeaconOrg.BoundBeacon.BeaconManager.cs" Line="1" Column="1" />
+      <File FileName="Transforms/Metadata.xml" Line="4" Column="4" />
+      <File FileName="obj/Release/generated/src/AltBeaconOrg.BoundBeacon.Beacon.cs" Line="24" Column="24" />
+      <File FileName="obj/Release/generated/src/AltBeaconOrg.BoundBeacon.AltBeacon.cs" Line="42" Column="42" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State expanded="True" selected="True">
+          <Option id="ShowAllFiles" value="True" />
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />

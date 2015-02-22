@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Org.Altbeacon.Beacon.Distance {
+namespace AltBeaconOrg.BoundBeacon.Distance {
 
 	// Metadata.xml XPath class reference: path="/api/package[@name='org.altbeacon.beacon.distance']/class[@name='ModelSpecificDistanceUpdater']"
 	public partial class ModelSpecificDistanceUpdater {

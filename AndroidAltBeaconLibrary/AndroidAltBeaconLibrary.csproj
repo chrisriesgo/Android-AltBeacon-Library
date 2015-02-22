@@ -54,6 +54,6 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Xamarin.Android.Bindings.targets" />
   <ItemGroup>
-    <LibraryProjectZip Include="Jars\android-beacon-library-2.1.2.aar" />
+    <LibraryProjectZip Include="Jars\android-beacon-library-2.1.3.aar" />
   </ItemGroup>
 </Project>

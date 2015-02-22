@@ -13,15 +13,27 @@
   <attr path="/api/package[@name='org.altbeacon.beacon.service']" name="managedName">AltBeaconOrg.BoundBeacon.Service</attr>
   <attr path="/api/package[@name='org.altbeacon.beacon.powersave']" name="managedName">AltBeaconOrg.BoundBeacon.Powersave</attr>
   <attr path="/api/package[@name='org.altbeacon.beacon.client']" name="managedName">AltBeaconOrg.BoundBeacon.Client</attr>
+  <attr path="/api/package[@name='org.altbeacon.beacon.distance']" name="managedName">AltBeaconOrg.BoundBeacon.Distance</attr>
+  <attr path="/api/package[@name='org.altbeacon.beacon.logging']" name="managedName">AltBeaconOrg.BoundBeacon.Logging</attr>
+  <attr path="/api/package[@name='org.altbeacon.beacon.service.scanner']" name="managedName">AltBeaconOrg.BoundBeacon.Service.Scanner</attr>
+  <attr path="/api/package[@name='org.altbeacon.bluetooth']" name="managedName">AltBeaconOrg.Bluetooth</attr>
 
   <!-- Have IBeaconIntentProcessor extend mono.android.app.IntentService instead of android.app.IntentService -->
   <attr path="/api/package[@name='org.altbeacon.beacon']/class[@name='BeaconIntentProcessor' and @extends='android.app.IntentService']" name="extends">mono.android.app.IntentService</attr>
 
   <!-- Hide "private" Property fields -->
+  <!---Skipping due to a duplicate field, method or nested type name -->
   <remove-node path="/api/package[@name='org.altbeacon.beacon']/class[@name='BeaconManager']/field[@name='beaconSimulator']" />
   <remove-node path="/api/package[@name='org.altbeacon.beacon']/class[@name='BeaconManager']/field[@name='dataRequestNotifier']" />
   <remove-node path="/api/package[@name='org.altbeacon.beacon']/class[@name='BeaconManager']/field[@name='distanceModelUpdateUrl']" />
   <remove-node path="/api/package[@name='org.altbeacon.beacon.simulator']/class[@name='StaticBeaconSimulator']/field[@name='beacons']" />
+  <remove-node path="/api/package[@name='org.altbeacon.beacon']/class[@name='BeaconParser']/field[@name='mServiceUuidStartOffset']" />
+
+  <!--- Hides inherited member -->
+  <remove-node path="/api/package[@name='org.altbeacon.beacon']/class[@name='AltBeacon']/field[@name='CREATOR']"/>
+  <remove-node path="/api/package[@name='org.altbeacon.beacon']/class[@name='Region']/method[@name='clone' and count(parameter)=0]" />
+
+<!--  <attr path="/api/package[@name='com.parse.codec.binary']/class[@name='Base32']/method[@name='isInAlphabet']" name="visibility">protected</attr>-->
 
   <!---Rename method that doesn't override the abstract. Create new partial class that does. -->
   <attr path="/api/package[@name='org.altbeacon.beacon.distance']/class[@name='ModelSpecificDistanceUpdater']/method[@name='doInBackground' and count(parameter)=1 and parameter[1][@type='java.lang.Void...']]" name="managedName">_DoInBackground</attr>
