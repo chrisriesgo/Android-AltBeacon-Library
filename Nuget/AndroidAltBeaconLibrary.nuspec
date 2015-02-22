@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package>
+  <metadata>
+    <id>AndroidAltBeaconLibrary</id>
+    <version>2.1.3</version>
+    <authors>AltBeacon.org</authors>
+    <owners>Chris Riesgo</owners>
+    <projectUrl>https://github.com/chrisriesgo/Android-AltBeacon-Library</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Allows Xamarin Android apps to interact with BLE beacons</description>
+    <releaseNotes>https://github.com/AltBeacon/android-beacon-library/releases/tag/2.1.3</releaseNotes>
+    <copyright>Copyright 2015</copyright>
+    <tags>android libraries altbeacon beacon ibeacon</tags>
+  </metadata>
+</package>
