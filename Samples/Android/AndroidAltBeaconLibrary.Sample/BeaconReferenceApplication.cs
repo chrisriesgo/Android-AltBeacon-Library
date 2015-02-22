@@ -9,24 +9,16 @@ using Android.Util;
 
 namespace AndroidAltBeaconLibrary.Sample
 {
-	public class BeaconReferenceApplication : Application, IBootstrapNotifier//, IBeaconConsumer
+	public class BeaconReferenceApplication : Application, IBootstrapNotifier
 	{
 		private const string TAG = "AndroidProximityReferenceApplication";
 
 		BeaconManager _beaconManager;
 
 		private RegionBootstrap regionBootstrap;
-		private RangeNotifier _rangeNotifier;
 		private Region _backgroundRegion;
 		private BackgroundPowerSaver backgroundPowerSaver;
 		private bool haveDetectedBeaconsSinceBoot = false;
-
-//		private MonitoringActivity monitoringActivity = null;
-//		public MonitoringActivity MonitoringActivity
-//		{
-//			get { return monitoringActivity; }
-//			set { monitoringActivity = value; }
-//		}
 
 		private MainActivity mainActivity = null;
 		public MainActivity MainActivity
