@@ -170,19 +170,13 @@ namespace AndroidAltBeaconLibrary.Sample
 			var allBeacons = new List<Beacon>();
 			if(e.Beacons.Count > 0)
 			{
-				var beaconNumber = 0;
 				foreach(var b in e.Beacons)
 				{
 					allBeacons.Add(b);
 				}
 
 				var orderedBeacons = allBeacons.OrderBy(b => b.Distance).ToList();
-
-				orderedBeacons.ForEach(async (firstBeacon) =>
-				{
-					beaconNumber++;
-					await UpdateData(firstBeacon);
-				});
+				await UpdateData(orderedBeacons);
 			}
 			else
 			{
@@ -252,19 +246,32 @@ namespace AndroidAltBeaconLibrary.Sample
 		{
 		}
 
-		private async Task UpdateData(Beacon beacon)
+		private async Task UpdateData(List<Beacon> beacons)
 		{
 			await Task.Run(() =>
-			{
-				if(_data.All(d => d.Id1.ToString() != beacon.Id1.ToString()))
+			{	
+				var newBeacons = new List<Beacon>();
+				foreach(var beacon in beacons)
 				{
-					RunOnUiThread(() =>
+					if(_data.All(b => b.Id1.ToString() == beacon.Id1.ToString()))
+					{
+						newBeacons.Add(beacon);
+					}
+				}
+
+				RunOnUiThread(() =>
+				{
+					foreach(var beacon in newBeacons)
 					{
 						_data.Add(beacon);
+					}
+
+					if (newBeacons.Count > 0)
+					{
 						_data.Sort((x,y) => x.Distance.CompareTo(y.Distance));
 						UpdateList();
-					});
-				}
+					}
+				});
 			});
 		}
 
