@@ -6,7 +6,7 @@ A Xamarin.Android binding of the [AltBeacon Android Beacon Library](https://gith
 ## Use
 
 - [Nuget Package](https://www.nuget.org/packages/AndroidAltBeaconLibrary/)
-- [Xamarin Component](http://components.xamarin.com/view/android-altbeacon-library) (2.1.0 pending review)
+- [Xamarin Component](http://components.xamarin.com/view/android-altbeacon-library)
 - Download the binary from [Releases](https://github.com/chrisriesgo/Android-AltBeacon-Library/releases)
 
 ## Reference Application
