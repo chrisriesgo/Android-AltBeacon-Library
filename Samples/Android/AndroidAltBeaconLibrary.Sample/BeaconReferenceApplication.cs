@@ -9,6 +9,7 @@ using Android.Util;
 
 namespace AndroidAltBeaconLibrary.Sample
 {
+	[Application (Label = "AltBeacon Sample", Icon = "@drawable/altbeacon")]
 	public class BeaconReferenceApplication : Application, IBootstrapNotifier
 	{
 		private const string TAG = "AndroidProximityReferenceApplication";
