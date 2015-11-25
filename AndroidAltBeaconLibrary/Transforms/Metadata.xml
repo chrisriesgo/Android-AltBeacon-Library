@@ -26,6 +26,7 @@
   <remove-node path="/api/package[@name='org.altbeacon.beacon']/class[@name='BeaconManager']/field[@name='beaconSimulator']" />
   <remove-node path="/api/package[@name='org.altbeacon.beacon']/class[@name='BeaconManager']/field[@name='dataRequestNotifier']" />
   <remove-node path="/api/package[@name='org.altbeacon.beacon']/class[@name='BeaconManager']/field[@name='distanceModelUpdateUrl']" />
+  <remove-node path="/api/package[@name='org.altbeacon.beacon']/class[@name='BeaconManager']/field[@name='rssiFilterImplClass']" />
   <remove-node path="/api/package[@name='org.altbeacon.beacon.simulator']/class[@name='StaticBeaconSimulator']/field[@name='beacons']" />
   <remove-node path="/api/package[@name='org.altbeacon.beacon']/class[@name='BeaconParser']/field[@name='mServiceUuidStartOffset']" />
 
