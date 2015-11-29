@@ -1,18 +1,13 @@
 ﻿<Properties StartupItem="AndroidAltBeaconLibrary.csproj" GitUserInfo="UsingGIT">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" PreferredExecutionTarget="Android.Nexus 4 (KitKat)" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Transforms/Metadata.xml">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" PreferredExecutionTarget="Android.Nexus5" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="obj/Release/generated/src/AltBeaconOrg.Bluetooth.BluetoothCrashResolver.cs">
     <Files>
-      <File FileName="Transforms/Metadata.xml" Line="4" Column="4" />
-      <File FileName="obj/Release/generated/src/AltBeaconOrg.BoundBeacon.Beacon.cs" Line="24" Column="24" />
-      <File FileName="obj/Release/generated/src/AltBeaconOrg.BoundBeacon.AltBeacon.cs" Line="42" Column="42" />
+      <File FileName="Transforms/Metadata.xml" Line="1" Column="1" />
+      <File FileName="obj/Release/generated/src/AltBeaconOrg.BoundBeacon.Beacon.cs" Line="1" Column="1" />
+      <File FileName="obj/Release/generated/src/AltBeaconOrg.BoundBeacon.AltBeacon.cs" Line="1" Column="1" />
+      <File FileName="obj/Release/generated/src/AltBeaconOrg.BoundBeacon.Identifier.cs" Line="1" Column="1" />
+      <File FileName="obj/Release/generated/src/AltBeaconOrg.Bluetooth.BluetoothCrashResolver.cs" Line="352" Column="11" />
     </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State expanded="True" selected="True">
-          <Option id="ShowAllFiles" value="True" />
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
