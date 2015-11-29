@@ -19,6 +19,10 @@ The [Android AltBeacon Library](http://components.xamarin.com/view/android-altbe
 
 ## Changes
 
+[v2.7](https://github.com/chrisriesgo/Android-AltBeacon-Library/releases/tag/2.7)
+
+- Binding of version [2.7](https://github.com/AltBeacon/android-beacon-library/releases/tag/2.7) of the android-beacon-library
+
 [v2.1.4](https://github.com/chrisriesgo/Android-AltBeacon-Library/releases/tag/2.1.4)
 
 - Binding of version [2.1.4](https://github.com/AltBeacon/android-beacon-library/releases/tag/2.1.4) of the android-beacon-library
