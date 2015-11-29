@@ -1,26 +1,9 @@
 ﻿<Properties StartupItem="AndroidAltBeaconLibrary.Sample.csproj" GitUserInfo="UsingGIT">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.92a4398e" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="MonitoringActivity.cs">
-    <Files>
-      <File FileName="MainActivity.cs" Line="66" Column="66" />
-      <File FileName="Properties/AndroidManifest.xml" Line="1" Column="1" />
-      <File FileName="BeaconReferenceApplication.cs" Line="3" Column="3" />
-      <File FileName="MonitorNotifier.cs" Line="32" Column="32" />
-      <File FileName="MonitoringActivity.cs" Line="1" Column="1" />
-    </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State expanded="True">
-          <Node name="AndroidAltBeaconLibrary.Sample" expanded="True">
-            <Node name="MonitoringActivity.cs" selected="True" />
-          </Node>
-        </State>
-      </Pad>
-    </Pads>
-  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" PreferredExecutionTarget="Android.TA095001P5" />
+  <MonoDevelop.Ide.Workbench />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/chrisriesgo/Projects/GitHub/Android-AltBeacon-Library/Samples/Android/AndroidAltBeaconLibrary.Sample/BeaconReferenceApplication.cs" line="127" column="1" />
+      <Breakpoint file="/Users/chrisriesgo/Projects/GitHub/Android-AltBeacon-Library/Samples/Android/AndroidAltBeaconLibrary.Sample/BeaconReferenceApplication.cs" line="128" column="1" />
       <Breakpoint file="/Users/chrisriesgo/Projects/GitHub/Android-AltBeacon-Library/Samples/Android/AndroidAltBeaconLibrary.Sample/MonitoringActivity.cs" line="135" column="1" />
       <Breakpoint file="/Users/chrisriesgo/Projects/GitHub/Android-AltBeacon-Library/Samples/Android/AndroidAltBeaconLibrary.Sample/MonitoringActivity.cs" line="100" column="1" />
     </BreakpointStore>
