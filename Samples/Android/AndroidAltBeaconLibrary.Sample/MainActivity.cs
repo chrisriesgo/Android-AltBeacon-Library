@@ -29,6 +29,8 @@ namespace AndroidAltBeaconLibrary.Sample
 		private ListView _list;
 		private BeaconManager _beaconManager;
 		private readonly List<Beacon> _data;
+		private ListSource _adapter;
+
 
 		public MainActivity()
 		{
@@ -47,7 +49,7 @@ namespace AndroidAltBeaconLibrary.Sample
 			_startButton = FindViewById<Button>(Resource.Id.startButton);
 			_list = FindViewById<ListView>(Resource.Id.list);
 
-			_list.Adapter = new ListSource((data, position, convertView, parent) => 
+			_adapter = new ListSource((data, position, convertView, parent) => 
 			{
 				var view = convertView;
 				var beacon = data[position];
@@ -79,6 +81,8 @@ namespace AndroidAltBeaconLibrary.Sample
 
 				return view;
 			});
+
+			_list.Adapter = _adapter;
 
 			VerityBluetooth();
 
@@ -165,8 +169,6 @@ namespace AndroidAltBeaconLibrary.Sample
 
 		async void RangingBeaconsInRegion(object sender, RangeEventArgs e)
 		{
-			await ClearData();
-
 			var allBeacons = new List<Beacon>();
 			if(e.Beacons.Count > 0)
 			{
@@ -177,11 +179,6 @@ namespace AndroidAltBeaconLibrary.Sample
 
 				var orderedBeacons = allBeacons.OrderBy(b => b.Distance).ToList();
 				await UpdateData(orderedBeacons);
-			}
-			else
-			{
-				// unknown
-				await ClearData();
 			}
 		}
 
@@ -251,9 +248,16 @@ namespace AndroidAltBeaconLibrary.Sample
 			await Task.Run(() =>
 			{	
 				var newBeacons = new List<Beacon>();
+
 				foreach(var beacon in beacons)
 				{
-					if(_data.All(b => b.Id1.ToString() == beacon.Id1.ToString()))
+					if(_data.Exists(b => b.Id1.ToString() == beacon.Id1.ToString()))
+					{
+						//update data
+						var index = _data.FindIndex(b => b.Id1.ToString() == beacon.Id1.ToString());
+						_data[index] = beacon;
+					}
+					else
 					{
 						newBeacons.Add(beacon);
 					}
@@ -348,6 +352,7 @@ namespace AndroidAltBeaconLibrary.Sample
 		{
 			return position;
 		}
+
 		public override Android.Views.View GetView(int position, Android.Views.View convertView, Android.Views.ViewGroup parent)
 		{
 			return _getView(_data, position, convertView, parent);
