@@ -1,4 +1,5 @@
-﻿<enum-method-mappings>
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<enum-method-mappings>
 	<!--
   This example changes the Java method:
     android.support.v4.app.Fragment.SavedState.writeToParcel (int flags)
@@ -15,7 +16,7 @@
   - To change the type of the return value, use "return" as the parameter name.
   - The parameter names will be p0, p1, ... unless you provide JavaDoc file in the project.
   -->
-  <mapping jni-interface="org/altbeacon/beacon/BeaconConsumer">
-    <method jni-name="bindService" parameter="flags" clr-enum-type="Android.Content.Bind" />
-  </mapping>
+	<mapping jni-interface="org/altbeacon/beacon/BeaconConsumer">
+		<method jni-name="bindService" parameter="flags" clr-enum-type="Android.Content.Bind" />
+	</mapping>
 </enum-method-mappings>

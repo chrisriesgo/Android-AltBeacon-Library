@@ -21,15 +21,15 @@ namespace AndroidAltBeaconLibrary.Sample
 		Icon = "@drawable/altbeacon")]
 	public class MainActivity : Activity, IDialogInterfaceOnDismissListener, IBeaconConsumer
 	{
-		private readonly RangeNotifier _rangeNotifier;
+		readonly RangeNotifier _rangeNotifier;
 
 		AltBeaconOrg.BoundBeacon.Region _tagRegion, _emptyRegion;
 
-		private Button _backgroundButton, _stopButton, _startButton;
-		private ListView _list;
-		private BeaconManager _beaconManager;
-		private readonly List<Beacon> _data;
-		private ListSource _adapter;
+		Button _backgroundButton, _stopButton, _startButton;
+		ListView _list;
+		BeaconManager _beaconManager;
+		readonly List<Beacon> _data;
+		ListSource _adapter;
 
 
 		public MainActivity()
@@ -38,9 +38,9 @@ namespace AndroidAltBeaconLibrary.Sample
 			_data = new List<Beacon>();
 		}
 
-		protected override void OnCreate(Bundle bundle)
+		protected override void OnCreate(Bundle savedInstanceState)
 		{
-			base.OnCreate(bundle);
+			base.OnCreate(savedInstanceState);
 
 			SetContentView(Resource.Layout.MainActivity);
 
@@ -239,11 +239,15 @@ namespace AndroidAltBeaconLibrary.Sample
 			}
 		}
 
-		private async Task UpdateDisplay(string message, Color color = default(Color))
+		Task UpdateDisplay(string message, Color color = default(Color))
 		{
+			return Task.Run(() => 
+			{ 
+				// Update the UI on the UI thread here
+			});
 		}
 
-		private async Task UpdateData(List<Beacon> beacons)
+		async Task UpdateData(List<Beacon> beacons)
 		{
 			await Task.Run(() =>
 			{	
@@ -303,7 +307,7 @@ namespace AndroidAltBeaconLibrary.Sample
 		{
 			_beaconManager.SetForegroundBetweenScanPeriod(5000); // 5000 milliseconds
 
-			_beaconManager.SetRangeNotifier(_rangeNotifier);
+			_beaconManager.AddRangeNotifier(_rangeNotifier);
 
 			_tagRegion = new AltBeaconOrg.BoundBeacon.Region("myUniqueBeaconId", Identifier.Parse("2F234454-CF6D-4A0F-ADF2-F4911BA9FFA6"), null, null);
 			_emptyRegion = new AltBeaconOrg.BoundBeacon.Region("myEmptyBeaconId", null, null, null);
@@ -319,16 +323,19 @@ namespace AndroidAltBeaconLibrary.Sample
 			Finish();
 		}
 
-		private async Task ClearData()
+		Task ClearData()
 		{
-			RunOnUiThread(() =>
+			return Task.Run(() =>
 			{
-				_data.Clear();
-				((ListSource)_list.Adapter).UpdateList(_data);
+				RunOnUiThread(() =>
+				{
+					_data.Clear();
+					((ListSource)_list.Adapter).UpdateList(_data);
+				});
 			});
 		}
 
-		private void UpdateList()
+		void UpdateList()
 		{
 			RunOnUiThread(() => 
 			{
@@ -339,8 +346,8 @@ namespace AndroidAltBeaconLibrary.Sample
 
 	public class ListSource : BaseAdapter<Beacon>
 	{
-		private List<Beacon> _data;
-		private Func<List<Beacon>, int, Android.Views.View, Android.Views.ViewGroup, Android.Views.View> _getView;
+		List<Beacon> _data;
+		Func<List<Beacon>, int, Android.Views.View, Android.Views.ViewGroup, Android.Views.View> _getView;
 
 		public ListSource(Func<List<Beacon>, int, Android.Views.View, Android.Views.ViewGroup, Android.Views.View> getView)
 		{
@@ -381,5 +388,3 @@ namespace AndroidAltBeaconLibrary.Sample
 		}
 	}
 }
-
-

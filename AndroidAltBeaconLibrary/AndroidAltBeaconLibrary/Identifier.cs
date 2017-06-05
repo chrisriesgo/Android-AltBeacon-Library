@@ -9,4 +9,3 @@ namespace AltBeaconOrg.BoundBeacon {
 		}
 	}
 }
-

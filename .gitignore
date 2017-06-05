@@ -12,6 +12,7 @@ TestResults
 *.suo
 *.user
 *.sln.docstates
+*.userprefs
 
 # Build results
 [Dd]ebug/
@@ -111,3 +112,4 @@ ComponentStore/
 lib/
 
 *.DS_Store
+*.droidres.db

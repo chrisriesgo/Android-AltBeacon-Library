@@ -19,7 +19,7 @@ namespace AndroidAltBeaconLibrary.Sample
 			OnDidRangeBeaconsInRegion(beacons, region);
 		}
 
-		private void OnDidRangeBeaconsInRegion(ICollection<Beacon> beacons, Region region)
+		void OnDidRangeBeaconsInRegion(ICollection<Beacon> beacons, Region region)
 		{
 			if (DidRangeBeaconsInRegionComplete != null)
 			{
@@ -28,4 +28,3 @@ namespace AndroidAltBeaconLibrary.Sample
 		}
 	}
 }
-

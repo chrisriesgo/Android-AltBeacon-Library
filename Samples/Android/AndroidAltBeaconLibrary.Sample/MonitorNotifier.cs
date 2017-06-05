@@ -30,7 +30,7 @@ namespace AndroidAltBeaconLibrary.Sample
 			OnExitRegionComplete(region);
 		}
 
-		private void OnDetermineStateForRegionComplete(int state, Region region)
+		void OnDetermineStateForRegionComplete(int state, Region region)
 		{
 			if (DetermineStateForRegionComplete != null)
 			{
@@ -38,7 +38,7 @@ namespace AndroidAltBeaconLibrary.Sample
 			}
 		}
 
-		private void OnEnterRegionComplete(Region region)
+		void OnEnterRegionComplete(Region region)
 		{
 			if (EnterRegionComplete != null)
 			{
@@ -46,7 +46,7 @@ namespace AndroidAltBeaconLibrary.Sample
 			}
 		}
 
-		private void OnExitRegionComplete(Region region)
+		void OnExitRegionComplete(Region region)
 		{
 			if (ExitRegionComplete != null)
 			{
@@ -55,4 +55,3 @@ namespace AndroidAltBeaconLibrary.Sample
 		}
 	}
 }
-

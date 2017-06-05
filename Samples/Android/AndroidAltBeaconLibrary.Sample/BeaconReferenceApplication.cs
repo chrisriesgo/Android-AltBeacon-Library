@@ -12,16 +12,16 @@ namespace AndroidAltBeaconLibrary.Sample
 	[Application (Label = "AltBeacon Sample", Icon = "@drawable/altbeacon")]
 	public class BeaconReferenceApplication : Application, IBootstrapNotifier
 	{
-		private const string TAG = "AndroidProximityReferenceApplication";
+		const string TAG = "AndroidProximityReferenceApplication";
 
 		BeaconManager _beaconManager;
 
-		private RegionBootstrap regionBootstrap;
-		private Region _backgroundRegion;
-		private BackgroundPowerSaver backgroundPowerSaver;
-		private bool haveDetectedBeaconsSinceBoot = false;
+		RegionBootstrap regionBootstrap;
+		Region _backgroundRegion;
+		BackgroundPowerSaver backgroundPowerSaver;
+		bool haveDetectedBeaconsSinceBoot = false;
 
-		private MainActivity mainActivity = null;
+		MainActivity mainActivity = null;
 		public MainActivity MainActivity
 		{
 			get { return mainActivity; }
@@ -96,7 +96,7 @@ namespace AndroidAltBeaconLibrary.Sample
 			Log.Debug(TAG, "did exit region.");
 		}
 
-		private void SendNotification() 
+		void SendNotification() 
 		{
 			var builder =
 				new NotificationCompat.Builder(this)
@@ -118,4 +118,3 @@ namespace AndroidAltBeaconLibrary.Sample
 		}
 	}
 }
-
