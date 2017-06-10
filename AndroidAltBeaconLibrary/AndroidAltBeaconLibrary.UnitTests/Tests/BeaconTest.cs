@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using AltBeaconOrg.BoundBeacon;
 using AltBeaconOrg.BoundBeacon.Distance;
-using Newtonsoft.Json;
 using NUnit.Framework;
 
 namespace AndroidAltBeaconLibrary.UnitTests
