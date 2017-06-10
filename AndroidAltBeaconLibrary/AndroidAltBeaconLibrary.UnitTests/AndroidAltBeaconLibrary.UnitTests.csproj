@@ -60,6 +60,7 @@
     <Compile Include="Tests\BeaconParserTest.cs" />
     <Compile Include="Tests\BeaconTest.cs" />
     <Compile Include="Tests\BeaconTransmitterTest.cs" />
+    <Compile Include="Tests\GattBeaconTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
