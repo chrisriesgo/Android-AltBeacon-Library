@@ -44,5 +44,10 @@ namespace AndroidAltBeaconLibrary.UnitTests
 		{
 			Assert.True(condition, message);
 		}
+		
+		public static void AreNotSame(string message, object expected, object actual)
+		{
+			Assert.AreNotSame(expected, actual, message);
+		}
 	}
 }
