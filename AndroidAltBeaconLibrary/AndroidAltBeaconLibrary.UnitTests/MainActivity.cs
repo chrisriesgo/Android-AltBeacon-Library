@@ -6,7 +6,7 @@ using Xamarin.Android.NUnitLite;
 
 namespace AndroidAltBeaconLibrary.UnitTests
 {
-	[Activity(Label = "AndroidAltBeaconLibrary.UnitTests", MainLauncher = true)]
+	[Activity(Label = "AltBeacon Tests", MainLauncher = true)]
 	public class MainActivity : TestSuiteActivity
 	{
 		protected override void OnCreate(Bundle bundle)
@@ -21,7 +21,7 @@ namespace AndroidAltBeaconLibrary.UnitTests
 		}
 	}
 	
-	public static class ObjectTypeHelper
+	public static class Helpers
 	{
 	    public static T Cast<T>(this Java.Lang.Object obj) where T : class
 	    {

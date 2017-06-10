@@ -157,7 +157,7 @@ namespace AndroidAltBeaconLibrary.UnitTests
 	        var parser = new BeaconParser();
 	        parser.SetBeaconLayout("m:2-3=beac,i:4-19,i:20-21,i:22-23,p:24-24,d:25-25");
 	        var beacon = parser.FromScanData(bytes, -55, null);
-	        AssertEx.AreEqual("manufacturer should be parsed", "bbaa", String.Format("{0:4X}", beacon.Manufacturer));
+	        AssertEx.AreEqual("manufacturer should be parsed", "bbaa", beacon.Manufacturer.ToString("X").ToLowerInvariant());
 	    }
 	
 	    [Test]
@@ -237,7 +237,7 @@ namespace AndroidAltBeaconLibrary.UnitTests
 	        double parsedLongitude = Int64.Parse(parsedBeacon.Id3.ToString().Substring(2), System.Globalization.NumberStyles.HexNumber) / 10000.0 - 180.0;
 	
 	        long encodedLatitude = (long)((latitude + 90)*10000.0);
-	        AssertEx.AreEqual("encoded latitude hex should match", String.Format("{0:X8}", encodedLatitude), parsedBeacon.Id2.ToString());
+	        AssertEx.AreEqual("encoded latitude hex should match", string.Format("0x{0:x8}", encodedLatitude).ToLowerInvariant(), parsedBeacon.Id2.ToString().ToLowerInvariant());
 	        AssertEx.AreEqual("device sequence num should be same", "0x000000000001", parsedBeacon.Id1.ToString());
 	        AssertEx.AreEqual("latitude should be about right", latitude, parsedLatitude, 0.0001);
 	        AssertEx.AreEqual("longitude should be about right", longitude, parsedLongitude, 0.0001);
@@ -293,7 +293,7 @@ namespace AndroidAltBeaconLibrary.UnitTests
 	                .SetDataFields(sampleData)
 	                .Build();
 	
-	        AssertEx.AreEqual("beacon contains a valid data on index 0", now, Convert.ToInt64(beacon.DataFields[0]));
+	        AssertEx.AreEqual("beacon contains a valid data on index 0", now, beacon.DataFields[0].LongValue());
 	
 	        // Make byte array
 	        byte[] headerBytes = HexStringToByteArray("1bff1801");
@@ -305,9 +305,9 @@ namespace AndroidAltBeaconLibrary.UnitTests
 	        // Try parsing the byte array
 	        Beacon parsedBeacon = parser.FromScanData(bytes, -59, null);
 	
-	        AssertEx.AreEqual("parsed beacon should contain a valid data on index 0", now, parsedBeacon.DataFields[0]);
-	        AssertEx.AreEqual("parsed beacon should contain a valid data on index 1", Convert.ToInt64(1234L), Convert.ToInt64(parsedBeacon.DataFields[1]));
-	        AssertEx.AreEqual("parsed beacon should contain a valid data on index 2", Convert.ToInt64(9876L), Convert.ToInt64(parsedBeacon.DataFields[2]));
+	        AssertEx.AreEqual("parsed beacon should contain a valid data on index 0", now, parsedBeacon.DataFields[0].LongValue());
+	        AssertEx.AreEqual("parsed beacon should contain a valid data on index 1", Convert.ToInt64(1234L), parsedBeacon.DataFields[1].LongValue());
+	        AssertEx.AreEqual("parsed beacon should contain a valid data on index 2", Convert.ToInt64(9876L), parsedBeacon.DataFields[2].LongValue());
 	    }
 	}
 }

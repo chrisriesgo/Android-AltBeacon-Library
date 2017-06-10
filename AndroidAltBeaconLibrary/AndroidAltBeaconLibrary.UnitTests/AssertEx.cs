@@ -39,5 +39,10 @@ namespace AndroidAltBeaconLibrary.UnitTests
 		{
 			Assert.NotNull(anObject, message);
 		}
+		
+		public static void True(string message, bool condition)
+		{
+			Assert.True(condition, message);
+		}
 	}
 }
