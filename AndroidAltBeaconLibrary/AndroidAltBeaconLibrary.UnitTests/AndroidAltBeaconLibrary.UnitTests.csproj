@@ -55,13 +55,28 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestBase.cs" />
     <Compile Include="AssertEx.cs" />
-    <Compile Include="Tests\AltBeaconParserTest.cs" />
-    <Compile Include="Tests\AltBeaconTest.cs" />
-    <Compile Include="Tests\BeaconParserTest.cs" />
-    <Compile Include="Tests\BeaconTest.cs" />
-    <Compile Include="Tests\BeaconTransmitterTest.cs" />
-    <Compile Include="Tests\GattBeaconTest.cs" />
-    <Compile Include="Tests\IdentifierTest.cs" />
+    <Compile Include="Tests\Beacon\Distance\ModelSpecificDistanceCalculatorTest.cs" />
+    <Compile Include="Tests\Beacon\Service\ArmaRssiFilterTest.cs" />
+    <Compile Include="Tests\Beacon\Service\BeaconServiceTest.cs" />
+    <Compile Include="Tests\Beacon\Service\ExtraDataBeaconTrackerTest.cs" />
+    <Compile Include="Tests\Beacon\Service\MonitoringStatusTest.cs" />
+    <Compile Include="Tests\Beacon\Service\RangingDataTest.cs" />
+    <Compile Include="Tests\Beacon\Service\RunningAverageRssiFilterTest.cs" />
+    <Compile Include="Tests\Beacon\Service\Scanner\DistinctPacketDetectorTest.cs" />
+    <Compile Include="Tests\Beacon\Service\Scanner\ScanFilterUtilsTest.cs" />
+    <Compile Include="Tests\Beacon\Simulator\BeaconSimulatorTest.cs" />
+    <Compile Include="Tests\Beacon\Utils\EddystoneTelemetryAccessorTest.cs" />
+    <Compile Include="Tests\Beacon\Utils\UrlBeaconUrlCompressorTest.cs" />
+    <Compile Include="Tests\Beacon\AltBeaconParserTest.cs" />
+    <Compile Include="Tests\Beacon\AltBeaconTest.cs" />
+    <Compile Include="Tests\Beacon\BeaconParserTest.cs" />
+    <Compile Include="Tests\Beacon\BeaconTest.cs" />
+    <Compile Include="Tests\Beacon\BeaconTransmitterTest.cs" />
+    <Compile Include="Tests\Beacon\GattBeaconTest.cs" />
+    <Compile Include="Tests\Beacon\IdentifierTest.cs" />
+    <Compile Include="Tests\Beacon\RegionTest.cs" />
+    <Compile Include="Tests\Beacon\SBeaconTest.cs" />
+    <Compile Include="Tests\Bluetooth\BleAdvertisementTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -77,6 +92,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Tests\" />
+    <Folder Include="Tests\Beacon\" />
+    <Folder Include="Tests\Beacon\Distance\" />
+    <Folder Include="Tests\Beacon\Service\" />
+    <Folder Include="Tests\Beacon\Simulator\" />
+    <Folder Include="Tests\Beacon\Utils\" />
+    <Folder Include="Tests\Bluetooth\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AndroidAltBeaconLibrary\AndroidAltBeaconLibrary.csproj">

@@ -30,6 +30,16 @@ namespace AndroidAltBeaconLibrary.UnitTests
 			Assert.AreEqual(expected, actual, message);
 		}
 		
+		public static void AreNotEqual(string message, int expected, int actual)
+		{
+			Assert.AreNotEqual(expected, actual, message);
+		}
+		
+		public static void AreNotEqual(string message, object expected, object actual)
+		{
+			Assert.AreNotEqual(expected, actual, message);
+		}
+		
 		public static void Null(string message, object anObject)
 		{
 			Assert.Null(anObject, message);
@@ -43,6 +53,11 @@ namespace AndroidAltBeaconLibrary.UnitTests
 		public static void True(string message, bool condition)
 		{
 			Assert.True(condition, message);
+		}
+		
+		public static void False(string message, bool condition)
+		{
+			Assert.False(condition, message);
 		}
 		
 		public static void AreNotSame(string message, object expected, object actual)

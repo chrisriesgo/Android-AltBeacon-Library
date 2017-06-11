@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using AltBeaconOrg.BoundBeacon;
+using AltBeaconOrg.BoundBeacon.Utils;
 using Android.App;
 using Android.Content;
 using NUnit.Framework;
-using Org.Altbeacon.Beacon.Utils;
 
 namespace AndroidAltBeaconLibrary.UnitTests
 {

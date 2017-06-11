@@ -57,6 +57,6 @@ namespace AndroidAltBeaconLibrary.UnitTests
 				//return obj;
 				return ois.ReadObject();
 		    }
-	    }	
+	    }
     }
 }

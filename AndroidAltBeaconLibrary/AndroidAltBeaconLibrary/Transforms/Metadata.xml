@@ -17,6 +17,7 @@
 	<attr path="/api/package[@name='org.altbeacon.beacon.logging']" name="managedName">AltBeaconOrg.BoundBeacon.Logging</attr>
 	<attr path="/api/package[@name='org.altbeacon.beacon.service.scanner']" name="managedName">AltBeaconOrg.BoundBeacon.Service.Scanner</attr>
 	<attr path="/api/package[@name='org.altbeacon.bluetooth']" name="managedName">AltBeaconOrg.Bluetooth</attr>
+	<attr path="/api/package[@name='org.altbeacon.beacon.utils']" name="managedName">AltBeaconOrg.BoundBeacon.Utils</attr>
 	
 	<!-- Have IBeaconIntentProcessor extend mono.android.app.IntentService instead of android.app.IntentService -->
 	<!--attr path="/api/package[@name='org.altbeacon.beacon']/class[@name='BeaconIntentProcessor' and @extends='android.app.IntentService']" name="extends">mono.android.app.IntentService</attr-->
@@ -79,4 +80,47 @@
 	<!-- Nodes added for 2.10.0 -->
 	<remove-node path="/api/package[@name='org.altbeacon.bluetooth']/class/method[@deprecated='deprecated']" />
 	<remove-node path="/api/package[@name='org.altbeacon.beacon']/class/method[@deprecated='deprecated']" />
+	<remove-node path="/api/package[@name='org.altbeacon.beacon']/class[@name='Beacon']/method[@name='getTxPower' and count(parameter)=0]" />
+	<remove-node path="/api/package[@name='org.altbeacon.beacon']/class[@name='Beacon']/method[@name='getRssi' and count(parameter)=0]" />
+	<remove-node path="/api/package[@name='org.altbeacon.beacon']/class[@name='Beacon']/method[@name='getBeaconTypeCode' and count(parameter)=0]" />
+	<remove-node path="/api/package[@name='org.altbeacon.beacon']/class[@name='Beacon']/method[@name='getBluetoothAddress' and count(parameter)=0]" />
+	
+	<remove-node path="/api/package[@name='org.altbeacon.beacon']/class[@name='Beacon']/method[@name='getBluetoothName' and count(parameter)=0]" />
+	<remove-node path="/api/package[@name='org.altbeacon.beacon']/class[@name='Beacon']/method[@name='getExtraDataFields' and count(parameter)=0]" />
+	<remove-node path="/api/package[@name='org.altbeacon.beacon']/class[@name='Beacon']/method[@name='getManufacturer' and count(parameter)=0]" />
+	<remove-node path="/api/package[@name='org.altbeacon.beacon']/class[@name='Beacon']/method[@name='getParserIdentifier' and count(parameter)=0]" />
+	<remove-node path="/api/package[@name='org.altbeacon.beacon']/class[@name='Beacon']/method[@name='getServiceUuid' and count(parameter)=0]" />
+	<remove-node path="/api/package[@name='org.altbeacon.beacon']/class[@name='Beacon']/method[@name='getDistanceCalculator' and count(parameter)=0]" />
+	<remove-node path="/api/package[@name='org.altbeacon.beacon']/class[@name='Beacon']/method[@name='getIdentifiers' and count(parameter)=0]" />
+	
+	<attr path="/api/package[@name='org.altbeacon.beacon']/class[@name='Beacon']/field[@name='mTxPower']" name="managedName">TxPower</attr>
+	<attr path="/api/package[@name='org.altbeacon.beacon']/class[@name='Beacon']/field[@name='mRssi']" name="managedName">Rssi</attr>
+	<attr path="/api/package[@name='org.altbeacon.beacon']/class[@name='Beacon']/field[@name='mBeaconTypeCode']" name="managedName">BeaconTypeCode</attr>
+	<attr path="/api/package[@name='org.altbeacon.beacon']/class[@name='Beacon']/field[@name='mBluetoothAddress']" name="managedName">BluetoothAddress</attr>
+	<attr path="/api/package[@name='org.altbeacon.beacon']/class[@name='Beacon']/field[@name='mBluetoothName']" name="managedName">BluetoothName</attr>
+	<attr path="/api/package[@name='org.altbeacon.beacon']/class[@name='Beacon']/field[@name='mExtraDataFields']" name="managedName">ExtraDataFields</attr>
+	<attr path="/api/package[@name='org.altbeacon.beacon']/class[@name='Beacon']/field[@name='mManufacturer']" name="managedName">Manufacturer</attr>
+	<attr path="/api/package[@name='org.altbeacon.beacon']/class[@name='Beacon']/field[@name='mMultiFrameBeacon']" name="managedName">MultiFrameBeacon</attr>
+	<attr path="/api/package[@name='org.altbeacon.beacon']/class[@name='Beacon']/field[@name='mParserIdentifier']" name="managedName">ParserIdentifier</attr>
+	<attr path="/api/package[@name='org.altbeacon.beacon']/class[@name='Beacon']/field[@name='mServiceUuid']" name="managedName">ServiceUuid</attr>
+	<attr path="/api/package[@name='org.altbeacon.beacon']/class[@name='Beacon']/field[@name='sDistanceCalculator']" name="managedName">DistanceCalculator</attr>
+	<attr path="/api/package[@name='org.altbeacon.beacon']/class[@name='Beacon']/field[@name='sHardwareEqualityEnforced']" name="managedName">HardwareEqualityEnforced</attr>
+	<attr path="/api/package[@name='org.altbeacon.beacon']/class[@name='Beacon']/field[@name='mIdentifiers']" name="managedName">Identifiers</attr>
+	
+	<attr path="/api/package[@name='org.altbeacon.beacon']/class[@name='Region']/field[@name='mIdentifiers']" name="visibility">public</attr>
+	<attr path="/api/package[@name='org.altbeacon.beacon']/class[@name='Region']/field[@name='mIdentifiers']" name="managedName">Identifiers</attr>
+	<attr path="/api/package[@name='org.altbeacon.beacon']/class[@name='Beacon']/field[@name='mTxPower']" name="visibility">public</attr>
+	<attr path="/api/package[@name='org.altbeacon.beacon']/class[@name='Beacon']/field[@name='mRssi']" name="visibility">public</attr>
+	<attr path="/api/package[@name='org.altbeacon.beacon']/class[@name='Beacon']/field[@name='mBeaconTypeCode']" name="visibility">public</attr>
+	<attr path="/api/package[@name='org.altbeacon.beacon']/class[@name='Beacon']/field[@name='mBluetoothAddress']" name="visibility">public</attr>
+	<attr path="/api/package[@name='org.altbeacon.beacon']/class[@name='Beacon']/field[@name='mBluetoothName']" name="visibility">public</attr>
+	<attr path="/api/package[@name='org.altbeacon.beacon']/class[@name='Beacon']/field[@name='mExtraDataFields']" name="visibility">public</attr>
+	<attr path="/api/package[@name='org.altbeacon.beacon']/class[@name='Beacon']/field[@name='mManufacturer']" name="visibility">public</attr>
+	<attr path="/api/package[@name='org.altbeacon.beacon']/class[@name='Beacon']/field[@name='mMultiFrameBeacon']" name="visibility">public</attr>
+	<attr path="/api/package[@name='org.altbeacon.beacon']/class[@name='Beacon']/field[@name='mParserIdentifier']" name="visibility">public</attr>
+	<attr path="/api/package[@name='org.altbeacon.beacon']/class[@name='Beacon']/field[@name='mServiceUuid']" name="visibility">public</attr>
+	<attr path="/api/package[@name='org.altbeacon.beacon']/class[@name='Beacon']/field[@name='sDistanceCalculator']" name="visibility">public</attr>
+	<attr path="/api/package[@name='org.altbeacon.beacon']/class[@name='Beacon']/field[@name='sHardwareEqualityEnforced']" name="visibility">public</attr>
+	<attr path="/api/package[@name='org.altbeacon.beacon']/class[@name='Beacon']/field[@name='mIdentifiers']" name="visibility">public</attr>
+	
 </metadata>
