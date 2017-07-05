@@ -279,7 +279,11 @@ namespace AndroidAltBeaconLibrary.Sample
 						_data.Sort((x,y) => x.Distance.CompareTo(y.Distance));
 						UpdateList();
 					}
-				});
+                    else
+                    {
+                        ((ListSource)_list.Adapter).NotifyDataSetInvalidated();
+                    }
+                });
 			});
 		}
 
