@@ -9,7 +9,7 @@ namespace AndroidAltBeaconLibrary.UnitTests
 	{
 		[SetUp]
 	    public void before() {
-	        BeaconManager.SetsManifestCheckingDisabled(true);
+	        BeaconManager.ManifestCheckingDisabled = true;
 	    }
 	
 	    /**

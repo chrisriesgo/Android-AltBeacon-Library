@@ -122,5 +122,7 @@
 	<attr path="/api/package[@name='org.altbeacon.beacon']/class[@name='Beacon']/field[@name='sDistanceCalculator']" name="visibility">public</attr>
 	<attr path="/api/package[@name='org.altbeacon.beacon']/class[@name='Beacon']/field[@name='sHardwareEqualityEnforced']" name="visibility">public</attr>
 	<attr path="/api/package[@name='org.altbeacon.beacon']/class[@name='Beacon']/field[@name='mIdentifiers']" name="visibility">public</attr>
-	
+
+	<attr path="/api/package[@name='org.altbeacon.beacon']/class[@name='ModelSpecificDistanceUpdater']/method[@name='doInBackground' and count(parameter)=1 and parameter[1][@type='java.lang.Object...']]/parameter[1]" name="managedType">params Java.Lang.Object []</attr>
+    <attr path="/api/package[@name='org.altbeacon.beacon']/class[@name='ModelSpecificDistanceUpdater']/method[@name='doInBackground' and count(parameter)=1 and parameter[1][@type='java.lang.Object...']]" name="managedReturn">Java.Lang.Object</attr>
 </metadata>
