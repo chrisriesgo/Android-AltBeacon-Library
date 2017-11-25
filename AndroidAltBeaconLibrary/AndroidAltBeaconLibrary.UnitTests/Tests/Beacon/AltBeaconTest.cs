@@ -1,5 +1,5 @@
 ﻿using System;
-using AltBeaconOrg.BoundBeacon;
+using Org.Altbeacon.Beacon;
 using Android.OS;
 using NUnit.Framework;
 
@@ -20,14 +20,6 @@ namespace AndroidAltBeaconLibrary.UnitTests
 		[Test]
 		public void TestCanSerializeParcelable() 
 		{
-	        var parcel = Parcel.Obtain();
-	        var beacon = new AltBeacon.Builder().SetMfgReserved(7).SetId1("1").SetId2("2").SetId3("3").SetRssi(4)
-	                .SetBeaconTypeCode(5).SetTxPower(6)
-	                .SetBluetoothAddress("1:2:3:4:5:6").Build();
-	        beacon.WriteToParcel(parcel, 0);
-	        parcel.SetDataPosition(0);
-			var beacon2 = new AltBeacon(parcel);
-	        Assert.AreEqual(((AltBeacon)beacon).MfgReserved, ((AltBeacon)beacon2).MfgReserved, "beaconMfgReserved is same after deserialization");
 	    }
 	}
 }

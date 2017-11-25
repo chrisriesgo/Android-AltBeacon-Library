@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using AltBeaconOrg.BoundBeacon;
-using AltBeaconOrg.BoundBeacon.Service;
+using Org.Altbeacon.Beacon;
+using Org.Altbeacon.Beacon.Service;
 using NUnit.Framework;
 
 namespace AndroidAltBeaconLibrary.UnitTests

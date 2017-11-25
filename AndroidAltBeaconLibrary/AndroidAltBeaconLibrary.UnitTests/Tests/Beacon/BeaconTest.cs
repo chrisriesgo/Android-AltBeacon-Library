@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using AltBeaconOrg.BoundBeacon;
-using AltBeaconOrg.BoundBeacon.Distance;
+using Org.Altbeacon.Beacon;
+using Org.Altbeacon.Beacon.Distance;
 using NUnit.Framework;
 
 namespace AndroidAltBeaconLibrary.UnitTests
@@ -12,7 +12,7 @@ namespace AndroidAltBeaconLibrary.UnitTests
 		[SetUp]
 		public void BeforeEachTest()
 		{
-			Beacon.SetHardwareEqualityEnforced(false);
+            Beacon.HardwareEqualityEnforced = (false);
 		}
 		
 		[Test]
@@ -76,7 +76,7 @@ namespace AndroidAltBeaconLibrary.UnitTests
 	
 	    [Test]
 	    public void TestBeaconsWithSameMacsAreEqual() {
-	        Beacon.SetHardwareEqualityEnforced(true);
+            Beacon.HardwareEqualityEnforced = (true);
 	        Beacon beacon1 = new AltBeacon.Builder().SetMfgReserved(7).SetId1("1").SetId2("2").SetId3("3").SetRssi(4)
 	                .SetBeaconTypeCode(5).SetTxPower(6)
 	                .SetBluetoothAddress("1:2:3:4:5:6").Build();
@@ -88,7 +88,7 @@ namespace AndroidAltBeaconLibrary.UnitTests
 	
 	    [Test]
 	    public void TestBeaconsWithDifferentMacsAreNotEqual() {
-	        Beacon.SetHardwareEqualityEnforced(true);
+            Beacon.HardwareEqualityEnforced = (true);
 	        Beacon beacon1 = new AltBeacon.Builder().SetMfgReserved(7).SetId1("1").SetId2("2").SetId3("3").SetRssi(4)
 	                .SetBeaconTypeCode(5).SetTxPower(6)
 	                .SetBluetoothAddress("1:2:3:4:5:6").Build();
@@ -131,7 +131,7 @@ namespace AndroidAltBeaconLibrary.UnitTests
 	    [Test]
 	    public void TestCalculateAccuracyWithRssiEqualsPowerOnInternalPropertiesAndRunningAverage() {
 	        var beacon = new Beacon.Builder().SetTxPower(-55).SetRssi(0).Build();
-	        beacon.SetRunningAverageRssi(-55);
+            beacon.RunningAverageRssi = (-55);
 	        double distance = beacon.Distance;
 	        AssertEx.AreEqual("Distance should be one meter if mRssi is the same as power", 1.0, distance, 0.1);
 	    }

@@ -1,6 +1,6 @@
 ﻿using System;
-using AltBeaconOrg.BoundBeacon;
-using AltBeaconOrg.BoundBeacon.Logging;
+using Org.Altbeacon.Beacon;
+using Org.Altbeacon.Beacon.Logging;
 using NUnit.Framework;
 
 namespace AndroidAltBeaconLibrary.UnitTests

@@ -2,17 +2,20 @@
 <package>
   <metadata>
     <id>AndroidAltBeaconLibrary</id>
-    <version>2.10.0.30132-pre1</version>
-    <authors>AltBeacon.org</authors>
+    <version>2.12.3</version>
+    <authors>AltBeacon.org, Xbindings</authors>
     <owners>Chris Riesgo</owners>
-    <projectUrl>https://github.com/chrisriesgo/Android-AltBeacon-Library</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>https://avatars0.githubusercontent.com/u/8183428</iconUrl>
+    <projectUrl>https://github.com/chrisriesgo/Android-AltBeacon-Library</projectUrl>
+    <title>Xamarin.Android binding library - AltBeacon</title>
+    <summary>AltBeacon for Android v2.12.3.</summary>
     <description>A Xamarin Android library providing APIs to interact with beacons.</description>
-    <releaseNotes>https://github.com/chrisriesgo/Android-AltBeacon-Library/releases/tag/v.2.10.0-alpha1</releaseNotes>
+    <releaseNotes>https://github.com/AltBeacon/android-beacon-library/releases/tag/2.12.3</releaseNotes>
     <copyright>Copyright 2017</copyright>
-    <tags>android libraries altbeacon beacon ibeacon</tags>
+    <tags>xamarin, Xamarin.Android, altbeacon beacon ibeacon</tags>
   </metadata>
   <files>
-    <file src="lib/MonoAndroid10/AndroidAltBeaconLibrary.dll" target="lib/MonoAndroid10" />
+    <file src="../AndroidAltBeaconLibrary/AndroidAltBeaconLibrary/bin/Release/AndroidAltBeaconLibrary.dll" target="lib/MonoAndroid10/Xbindings.AltBeacon.Droid.dll" />
   </files>
 </package>

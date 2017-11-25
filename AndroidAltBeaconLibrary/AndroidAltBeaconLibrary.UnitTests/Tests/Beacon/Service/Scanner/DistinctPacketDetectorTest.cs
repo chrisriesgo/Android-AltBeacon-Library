@@ -1,5 +1,5 @@
 ﻿using System;
-using AltBeaconOrg.BoundBeacon.Service.Scanner;
+using Org.Altbeacon.Beacon.Service.Scanner;
 using NUnit.Framework;
 
 namespace AndroidAltBeaconLibrary.UnitTests

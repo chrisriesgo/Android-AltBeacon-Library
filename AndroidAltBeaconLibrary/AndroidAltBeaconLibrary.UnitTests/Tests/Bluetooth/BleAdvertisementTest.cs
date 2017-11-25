@@ -1,6 +1,6 @@
 ﻿using System;
 using NUnit.Framework;
-using AltBeaconOrg.Bluetooth;
+using Org.Altbeacon.Bluetooth;
 
 namespace AndroidAltBeaconLibrary.UnitTests
 {

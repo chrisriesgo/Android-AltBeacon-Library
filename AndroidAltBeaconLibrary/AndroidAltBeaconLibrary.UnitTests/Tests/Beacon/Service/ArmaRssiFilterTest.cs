@@ -1,10 +1,9 @@
-﻿using System;
-using AltBeaconOrg.BoundBeacon.Service;
-using NUnit.Framework;
+﻿using NUnit.Framework;
+using Org.Altbeacon.Beacon.Service;
 
 namespace AndroidAltBeaconLibrary.UnitTests
 {
-	[TestFixture]
+    [TestFixture]
 	public class ArmaRssiFilterTest
 	{
 		[Test]

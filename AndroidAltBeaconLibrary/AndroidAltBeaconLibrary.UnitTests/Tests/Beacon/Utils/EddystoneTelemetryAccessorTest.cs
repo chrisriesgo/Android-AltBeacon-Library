@@ -1,8 +1,8 @@
 ﻿using System;
 using NUnit.Framework;
-using AltBeaconOrg.BoundBeacon;
+using Org.Altbeacon.Beacon;
 using System.Collections.Generic;
-using AltBeaconOrg.BoundBeacon.Utils;
+using Org.Altbeacon.Beacon.Utils;
 
 namespace AndroidAltBeaconLibrary.UnitTests
 {

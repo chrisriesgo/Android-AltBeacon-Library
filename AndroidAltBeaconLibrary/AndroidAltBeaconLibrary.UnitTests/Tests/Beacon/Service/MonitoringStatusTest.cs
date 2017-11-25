@@ -1,6 +1,6 @@
 ﻿using System;
-using AltBeaconOrg.BoundBeacon;
-using AltBeaconOrg.BoundBeacon.Service;
+using Org.Altbeacon.Beacon;
+using Org.Altbeacon.Beacon.Service;
 using Android.Content;
 using NUnit.Framework;
 

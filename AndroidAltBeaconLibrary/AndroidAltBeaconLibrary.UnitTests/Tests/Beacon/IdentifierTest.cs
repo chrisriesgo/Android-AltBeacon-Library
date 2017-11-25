@@ -1,4 +1,4 @@
-﻿using AltBeaconOrg.BoundBeacon;
+﻿using Org.Altbeacon.Beacon;
 using Java.Lang;
 using Java.Util;
 using NUnit.Framework;

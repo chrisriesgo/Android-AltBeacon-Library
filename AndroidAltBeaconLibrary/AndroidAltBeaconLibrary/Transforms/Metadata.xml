@@ -1,3 +1,21 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <metadata>
+	<attr
+		path="/api/package[@name='org.altbeacon.beacon']/class[@name='BeaconManager']/field[@name='beaconSimulator']"
+		name="managedName">_beaconSimulator</attr>
+	<attr
+		path="/api/package[@name='org.altbeacon.beacon']/class[@name='BeaconManager']/field[@name='dataRequestNotifier']"
+		name="managedName">_dataRequestNotifier</attr>
+	<attr
+		path="/api/package[@name='org.altbeacon.beacon']/class[@name='BeaconManager']/field[@name='distanceModelUpdateUrl']"
+		name="managedName">_distanceModelUpdateUrl</attr>
+	<attr
+		path="/api/package[@name='org.altbeacon.beacon']/class[@name='BeaconManager']/field[@name='rssiFilterImplClass']"
+		name="managedName">_rssiFilterImplClass</attr>
+    <attr
+        path="/api/package[@name='org.altbeacon.beacon']/class[@name='BeaconParser']/field[@name='mServiceUuidStartOffset']"
+        name="managedName">mServiceUuidStartOffset</attr>
+    <attr
+        path="/api/package[@name='org.altbeacon.beacon.simulator']/class[@name='StaticBeaconSimulator']/field[@name='beacons']"
+        name="managedName">_beacons</attr>
 </metadata>
