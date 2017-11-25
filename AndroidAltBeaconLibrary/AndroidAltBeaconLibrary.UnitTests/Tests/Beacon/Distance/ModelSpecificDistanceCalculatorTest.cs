@@ -1,7 +1,7 @@
 ﻿using System;
-using AltBeaconOrg.BoundBeacon.Distance;
 using Android.Content;
 using NUnit.Framework;
+using Org.Altbeacon.Beacon.Distance;
 
 namespace AndroidAltBeaconLibrary.UnitTests
 {

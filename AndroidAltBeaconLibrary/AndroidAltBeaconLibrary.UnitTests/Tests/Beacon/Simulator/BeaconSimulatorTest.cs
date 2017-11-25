@@ -1,6 +1,6 @@
 ﻿using System;
-using AltBeaconOrg.BoundBeacon;
-using AltBeaconOrg.BoundBeacon.Simulator;
+using Org.Altbeacon.Beacon;
+using Org.Altbeacon.Beacon.Simulator;
 using NUnit.Framework;
 using System.Collections.Generic;
 

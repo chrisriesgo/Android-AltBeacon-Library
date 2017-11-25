@@ -1,5 +1,5 @@
 ﻿using System;
-using AltBeaconOrg.BoundBeacon;
+using Org.Altbeacon.Beacon;
 using System.Collections.Generic;
 
 namespace AltBeaconLibrary.Sample.Droid

@@ -3,7 +3,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using AltBeaconOrg.BoundBeacon;
+using Org.Altbeacon.Beacon;
 using Android.App;
 using Android.Content;
 
@@ -23,7 +23,7 @@ namespace AndroidAltBeaconLibrary.Sample
 	{
 		readonly RangeNotifier _rangeNotifier;
 
-		AltBeaconOrg.BoundBeacon.Region _tagRegion, _emptyRegion;
+		Org.Altbeacon.Beacon.Region _tagRegion, _emptyRegion;
 
 		Button _backgroundButton, _stopButton, _startButton;
 		ListView _list;
@@ -121,7 +121,7 @@ namespace AndroidAltBeaconLibrary.Sample
 
 			if(_beaconManager.IsBound(this))
 			{
-				_beaconManager.SetBackgroundMode(false);
+                _beaconManager.BackgroundMode = (false);
 			}
 		}
 
@@ -155,7 +155,7 @@ namespace AndroidAltBeaconLibrary.Sample
 
 			if(_beaconManager.IsBound(this))
 			{
-				_beaconManager.SetBackgroundMode(true);
+                _beaconManager.BackgroundMode = (true);
 			}
 
 			((BeaconReferenceApplication) this.ApplicationContext).MainActivity = null;
@@ -305,12 +305,12 @@ namespace AndroidAltBeaconLibrary.Sample
 
 		public void OnBeaconServiceConnect()
 		{
-			_beaconManager.SetForegroundBetweenScanPeriod(5000); // 5000 milliseconds
+            _beaconManager.ForegroundBetweenScanPeriod = (5000); // 5000 milliseconds
 
 			_beaconManager.AddRangeNotifier(_rangeNotifier);
 
-			_tagRegion = new AltBeaconOrg.BoundBeacon.Region("myUniqueBeaconId", Identifier.Parse("2F234454-CF6D-4A0F-ADF2-F4911BA9FFA6"), null, null);
-			_emptyRegion = new AltBeaconOrg.BoundBeacon.Region("myEmptyBeaconId", null, null, null);
+			_tagRegion = new Org.Altbeacon.Beacon.Region("myUniqueBeaconId", Identifier.Parse("2F234454-CF6D-4A0F-ADF2-F4911BA9FFA6"), null, null);
+			_emptyRegion = new Org.Altbeacon.Beacon.Region("myEmptyBeaconId", null, null, null);
 
 			_beaconManager.StartRangingBeaconsInRegion(_tagRegion);
 			_beaconManager.StartRangingBeaconsInRegion(_emptyRegion);

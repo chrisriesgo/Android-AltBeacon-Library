@@ -1,5 +1,5 @@
 ﻿using System;
-using AltBeaconOrg.BoundBeacon.Utils;
+using Org.Altbeacon.Beacon.Utils;
 using Java.Util;
 using NUnit.Framework;
 

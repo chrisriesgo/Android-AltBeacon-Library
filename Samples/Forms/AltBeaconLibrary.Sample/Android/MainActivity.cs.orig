@@ -4,7 +4,7 @@ using Android.App;
 using Android.OS;
 
 using Xamarin.Forms.Platform.Android;
-using AltBeaconOrg.BoundBeacon;
+using Org.Altbeacon.Beacon;
 
 
 namespace AltBeaconLibrary.Sample.Droid

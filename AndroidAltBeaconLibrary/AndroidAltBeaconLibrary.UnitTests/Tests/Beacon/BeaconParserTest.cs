@@ -1,6 +1,6 @@
-﻿﻿using System;
+﻿using System;
 using System.Collections.Generic;
-using AltBeaconOrg.BoundBeacon;
+using Org.Altbeacon.Beacon;
 using Android.Annotation;
 using Android.Runtime;
 using NUnit.Framework;
@@ -20,16 +20,6 @@ namespace AndroidAltBeaconLibrary.UnitTests
 	        Assert.AreEqual(2, parser.MatchingBeaconTypeCodeStartOffset, "parser should get beacon type code start offset");
 	        Assert.AreEqual(3, parser.MatchingBeaconTypeCodeEndOffset, "parser should get beacon type code end offset");
 	        Assert.AreEqual(Convert.ToInt64(0xbeacL), Convert.ToInt64(parser.MatchingBeaconTypeCode), "parser should get beacon type code");
-	        Assert.AreEqual(4, parser.IdentifierStartOffsets[0], "parser should get identifier start offset");
-	        AssertEx.AreEqual("parser should get identifier end offset", 19, parser.IdentifierEndOffsets[0]);
-	        AssertEx.AreEqual("parser should get identifier start offset", 20, parser.IdentifierStartOffsets[1]);
-	        AssertEx.AreEqual("parser should get identifier end offset", 21, parser.IdentifierEndOffsets[1]);
-	        AssertEx.AreEqual("parser should get identifier start offset", 22, parser.IdentifierStartOffsets[2]);
-	        AssertEx.AreEqual("parser should get identifier end offset", 23, parser.IdentifierEndOffsets[2]);
-	        AssertEx.AreEqual("parser should get power start offset", 24, Convert.ToInt32(parser.PowerStartOffset));
-	        AssertEx.AreEqual("parser should get power end offset", 24, Convert.ToInt32(parser.PowerEndOffset));
-	        AssertEx.AreEqual("parser should get data start offset", 25, parser.DataStartOffsets[0]);
-	        AssertEx.AreEqual("parser should get data end offset", 25, parser.DataEndOffsets[0]);
 	    }
 	    
 	    [Test]

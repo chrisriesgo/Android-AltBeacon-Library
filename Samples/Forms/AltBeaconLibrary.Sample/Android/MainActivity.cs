@@ -4,8 +4,8 @@ using Android.App;
 using Android.OS;
 
 using Xamarin.Forms.Platform.Android;
-using AltBeaconOrg.BoundBeacon;
-
+using Org.Altbeacon.Beacon;
+using Android.Content;
 
 namespace AltBeaconLibrary.Sample.Droid
 {
@@ -25,15 +25,18 @@ namespace AltBeaconLibrary.Sample.Droid
 			LoadApplication(new App());
 		}
 
-		#region IBeaconConsumer Implementation
-		public void OnBeaconServiceConnect()
-		{
-			var beaconService = Xamarin.Forms.DependencyService.Get<IAltBeaconService>();
+        public bool BindService(Intent p0, IServiceConnection p1, int p2)
+        {
+            return true;
+        }
 
-			beaconService.StartMonitoring();
-			beaconService.StartRanging();
-		}
-		#endregion
-	}
+        public void OnBeaconServiceConnect()
+        {
+            var beaconService = Xamarin.Forms.DependencyService.Get<IAltBeaconService>();
+
+            beaconService.StartMonitoring();
+            beaconService.StartRanging();
+        }
+    }
 }
 

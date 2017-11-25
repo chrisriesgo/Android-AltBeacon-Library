@@ -1,8 +1,8 @@
 ﻿using System;
 using Android.App;
-using AltBeaconOrg.BoundBeacon.Startup;
-using AltBeaconOrg.BoundBeacon;
-using AltBeaconOrg.BoundBeacon.Powersave;
+using Org.Altbeacon.Beacon.Startup;
+using Org.Altbeacon.Beacon;
+using Org.Altbeacon.Beacon.Powersave;
 using System.Diagnostics;
 using Android.Content;
 using NotificationCompat = Android.Support.V4.App.NotificationCompat;

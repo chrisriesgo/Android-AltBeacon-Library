@@ -1,10 +1,10 @@
 ﻿using System;
 using Android.App;
-using AltBeaconOrg.BoundBeacon.Startup;
-using AltBeaconOrg.BoundBeacon;
+using Org.Altbeacon.Beacon.Startup;
+using Org.Altbeacon.Beacon;
 using Android.Support.V4.App;
 using Android.Content;
-using AltBeaconOrg.BoundBeacon.Powersave;
+using Org.Altbeacon.Beacon.Powersave;
 using Android.Util;
 
 namespace AltBeaconLibrary.Sample.Droid
@@ -53,11 +53,11 @@ namespace AltBeaconLibrary.Sample.Droid
 			backgroundPowerSaver = new BackgroundPowerSaver(this);
 		}
 
-		public void DidDetermineStateForRegion(int state, AltBeaconOrg.BoundBeacon.Region region)
+		public void DidDetermineStateForRegion(int state, Org.Altbeacon.Beacon.Region region)
 		{
 		}
 
-		public void DidEnterRegion(AltBeaconOrg.BoundBeacon.Region region)
+		public void DidEnterRegion(Org.Altbeacon.Beacon.Region region)
 		{
 			// In this example, this class sends a notification to the user whenever a Beacon
 			// matching a Region (defined above) are first seen.
@@ -92,7 +92,7 @@ namespace AltBeaconLibrary.Sample.Droid
 			}
 		}
 
-		public void DidExitRegion(AltBeaconOrg.BoundBeacon.Region region)
+		public void DidExitRegion(Org.Altbeacon.Beacon.Region region)
 		{
 			Log.Debug(TAG, "did exit region.");
 		}
