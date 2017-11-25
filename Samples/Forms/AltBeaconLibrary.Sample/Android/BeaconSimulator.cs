@@ -1,7 +1,7 @@
 ﻿using System;
-using AltBeaconOrg.BoundBeacon.Simulator;
+using Org.Altbeacon.Beacon.Simulator;
 using System.Collections.Generic;
-using AltBeaconOrg.BoundBeacon;
+using Org.Altbeacon.Beacon;
 
 namespace AltBeaconLibrary.Sample.Droid
 {

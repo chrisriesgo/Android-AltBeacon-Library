@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using AltBeaconOrg.BoundBeacon;
-using AltBeaconOrg.BoundBeacon.Simulator;
+using Org.Altbeacon.Beacon;
+using Org.Altbeacon.Beacon.Simulator;
 using Java.Lang;
 using Java.Util.Concurrent;
 

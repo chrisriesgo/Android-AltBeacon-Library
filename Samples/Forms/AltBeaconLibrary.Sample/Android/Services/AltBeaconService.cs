@@ -1,5 +1,5 @@
 ﻿using System;
-using AltBeaconOrg.BoundBeacon;
+using Org.Altbeacon.Beacon;
 using AltBeaconLibrary.Sample.Droid.Services;
 using Android.Widget;
 using System.Collections.Generic;
@@ -71,9 +71,9 @@ namespace AltBeaconLibrary.Sample.Droid.Services
 			_monitorNotifier.DetermineStateForRegionComplete += DeterminedStateForRegionComplete;
 			_rangeNotifier.DidRangeBeaconsInRegionComplete += RangingBeaconsInRegion;
 
-			_tagRegion = new AltBeaconOrg.BoundBeacon.Region("myUniqueBeaconId", Identifier.Parse("E4C8A4FC-F68B-470D-959F-29382AF72CE7"), null, null);
-			_tagRegion = new AltBeaconOrg.BoundBeacon.Region("myUniqueBeaconId", Identifier.Parse("B9407F30-F5F8-466E-AFF9-25556B57FE6D"), null, null);
-			_emptyRegion = new AltBeaconOrg.BoundBeacon.Region("myEmptyBeaconId", null, null, null);
+			_tagRegion = new Org.Altbeacon.Beacon.Region("myUniqueBeaconId", Identifier.Parse("E4C8A4FC-F68B-470D-959F-29382AF72CE7"), null, null);
+			_tagRegion = new Org.Altbeacon.Beacon.Region("myUniqueBeaconId", Identifier.Parse("B9407F30-F5F8-466E-AFF9-25556B57FE6D"), null, null);
+			_emptyRegion = new Org.Altbeacon.Beacon.Region("myEmptyBeaconId", null, null, null);
 
 			bm.SetBackgroundMode(false);
 			bm.Bind((IBeaconConsumer)Xamarin.Forms.Forms.Context);

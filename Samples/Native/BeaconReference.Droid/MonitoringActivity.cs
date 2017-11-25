@@ -1,6 +1,6 @@
 ﻿
 using System;
-using AltBeaconOrg.BoundBeacon;
+using Org.Altbeacon.Beacon;
 using Android;
 using Android.Annotation;
 using Android.App;
