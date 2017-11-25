@@ -16,7 +16,4 @@
   - To change the type of the return value, use "return" as the parameter name.
   - The parameter names will be p0, p1, ... unless you provide JavaDoc file in the project.
   -->
-	<mapping jni-interface="org/altbeacon/beacon/BeaconConsumer">
-		<method jni-name="bindService" parameter="flags" clr-enum-type="Android.Content.Bind" />
-	</mapping>
 </enum-method-mappings>
