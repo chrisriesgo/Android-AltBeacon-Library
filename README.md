@@ -3,6 +3,8 @@ Android AltBeacon Library ![](https://ci.appveyor.com/api/projects/status/gpeioj
 
 A Xamarin.Android binding of the [AltBeacon Android Beacon Library](https://github.com/AltBeacon/android-beacon-library). This library allows Android apps to interact with BLE beacons in accordance with the open and interoperable [AltBeacon proximity beacon protocol specification](https://github.com/AltBeacon/spec).
 
+Note: This library uses the Java library version 2.15, and is Android Oreo (8.x) compatible!
+
 ## Use
 
 - [Nuget Package](https://www.nuget.org/packages/AndroidAltBeaconLibrary/)
