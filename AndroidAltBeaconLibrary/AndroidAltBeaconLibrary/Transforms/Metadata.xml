@@ -60,7 +60,7 @@
 	<!-- IDistanceCalculator -->
 	<attr path="/api/package[@name='org.altbeacon.beacon.distance']/interface[@name='DistanceCalculator']/method[@name='calculateDistance' and count(parameter)=2 and parameter[1][@type='int'] and parameter[2][@type='double']]/parameter[@name='p0']" name="name">txPower</attr>
 	<attr path="/api/package[@name='org.altbeacon.beacon.distance']/interface[@name='DistanceCalculator']/method[@name='calculateDistance' and count(parameter)=2 and parameter[1][@type='int'] and parameter[2][@type='double']]/parameter[@name='p1']" name="name">rssi</attr>
-	
+    
 	<!-- Make nodes public -->
 	<attr path="/api/package[@name='org.altbeacon.beacon']/class[@name='AltBeacon']/constructor[@name='AltBeacon' and count(parameter)=1 and parameter[1][@type='android.os.Parcel']]" name="visibility">public</attr>
 	<attr path="/api/package[@name='org.altbeacon.beacon']/class[@name='BeaconParser']/field[@name='mIdentifierStartOffsets']" name="visibility">public</attr>
@@ -79,7 +79,6 @@
 	
 	<!-- Nodes added for 2.10.0 -->
 	<remove-node path="/api/package[@name='org.altbeacon.bluetooth']/class/method[@deprecated='deprecated']" />
-	<remove-node path="/api/package[@name='org.altbeacon.beacon']/class/method[@deprecated='deprecated']" />
 	<remove-node path="/api/package[@name='org.altbeacon.beacon']/class[@name='Beacon']/method[@name='getTxPower' and count(parameter)=0]" />
 	<remove-node path="/api/package[@name='org.altbeacon.beacon']/class[@name='Beacon']/method[@name='getRssi' and count(parameter)=0]" />
 	<remove-node path="/api/package[@name='org.altbeacon.beacon']/class[@name='Beacon']/method[@name='getBeaconTypeCode' and count(parameter)=0]" />
