@@ -113,3 +113,5 @@ lib/
 
 *.DS_Store
 *.droidres.db
+/AndroidAltBeaconLibrary/.vs
+/AndroidAltBeaconLibrary/.mfractor

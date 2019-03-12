@@ -45,12 +45,12 @@ namespace AndroidAltBeaconLibrary.UnitTests
 
 			public String Id => Identifiers[1].ToString();
 	        
-			public override int DescribeContents()
+			public int DescribeContents()
 			{
 				return 0;
 			}
 			
-			public override void WriteToParcel(Parcel @out, ParcelableWriteFlags flags)
+			public void WriteToParcel(Parcel @out, ParcelableWriteFlags flags)
 			{
 				// TODO: Implement me
 			}
