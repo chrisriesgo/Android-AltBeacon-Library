@@ -120,5 +120,6 @@
 	<attr path="/api/package[@name='org.altbeacon.beacon']/class[@name='Beacon']/field[@name='sDistanceCalculator']" name="visibility">public</attr>
 	<attr path="/api/package[@name='org.altbeacon.beacon']/class[@name='Beacon']/field[@name='sHardwareEqualityEnforced']" name="visibility">public</attr>
 	<attr path="/api/package[@name='org.altbeacon.beacon']/class[@name='Beacon']/field[@name='mIdentifiers']" name="visibility">public</attr>
-	
+
+  <attr path="/api/package[@name='org.altbeacon.beacon.service.scanner']/class[@name='ScanFilterUtils.ScanFilterData']" name="visibility">public</attr>
 </metadata>
