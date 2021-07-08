@@ -75,7 +75,7 @@ namespace AltBeaconLibrary.Sample.Droid.Services
 			_tagRegion = new AltBeaconOrg.BoundBeacon.Region("myUniqueBeaconId", Identifier.Parse("B9407F30-F5F8-466E-AFF9-25556B57FE6D"), null, null);
 			_emptyRegion = new AltBeaconOrg.BoundBeacon.Region("myEmptyBeaconId", null, null, null);
 
-			bm.SetBackgroundMode(false);
+			bm.BackgroundMode = false;
 			bm.Bind((IBeaconConsumer)Xamarin.Forms.Forms.Context);
 
 			return bm;
@@ -83,7 +83,7 @@ namespace AltBeaconLibrary.Sample.Droid.Services
 
 		public void StartMonitoring()
 		{
-			BeaconManagerImpl.SetForegroundBetweenScanPeriod(5000); // 5000 milliseconds
+			BeaconManagerImpl.ForegroundBetweenScanPeriod = 5000; // 5000 milliseconds
 
 			BeaconManagerImpl.SetMonitorNotifier(_monitorNotifier); 
 			_beaconManager.StartMonitoringBeaconsInRegion(_tagRegion);
@@ -92,7 +92,7 @@ namespace AltBeaconLibrary.Sample.Droid.Services
 
 		public void StartRanging()
 		{
-			BeaconManagerImpl.SetForegroundBetweenScanPeriod(5000); // 5000 milliseconds
+			BeaconManagerImpl.ForegroundBetweenScanPeriod = 5000; // 5000 milliseconds
 
 			BeaconManagerImpl.SetRangeNotifier(_rangeNotifier);
 			_beaconManager.StartRangingBeaconsInRegion(_tagRegion);

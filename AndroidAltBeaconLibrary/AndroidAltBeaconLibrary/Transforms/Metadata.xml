@@ -78,8 +78,6 @@
 	<attr path="/api/package[@name='org.altbeacon.beacon']/class[@name='BeaconParser']/field[@name='mDataEndOffsets']" name="managedName">DataEndOffsets</attr>
 	
 	<!-- Nodes added for 2.10.0 -->
-	<remove-node path="/api/package[@name='org.altbeacon.bluetooth']/class/method[@deprecated='deprecated']" />
-	<remove-node path="/api/package[@name='org.altbeacon.beacon']/class/method[@deprecated='deprecated']" />
 	<remove-node path="/api/package[@name='org.altbeacon.beacon']/class[@name='Beacon']/method[@name='getTxPower' and count(parameter)=0]" />
 	<remove-node path="/api/package[@name='org.altbeacon.beacon']/class[@name='Beacon']/method[@name='getRssi' and count(parameter)=0]" />
 	<remove-node path="/api/package[@name='org.altbeacon.beacon']/class[@name='Beacon']/method[@name='getBeaconTypeCode' and count(parameter)=0]" />
@@ -122,5 +120,6 @@
 	<attr path="/api/package[@name='org.altbeacon.beacon']/class[@name='Beacon']/field[@name='sDistanceCalculator']" name="visibility">public</attr>
 	<attr path="/api/package[@name='org.altbeacon.beacon']/class[@name='Beacon']/field[@name='sHardwareEqualityEnforced']" name="visibility">public</attr>
 	<attr path="/api/package[@name='org.altbeacon.beacon']/class[@name='Beacon']/field[@name='mIdentifiers']" name="visibility">public</attr>
-	
+
+  <attr path="/api/package[@name='org.altbeacon.beacon.service.scanner']/class[@name='ScanFilterUtils.ScanFilterData']" name="visibility">public</attr>
 </metadata>

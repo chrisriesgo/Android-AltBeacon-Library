@@ -121,7 +121,7 @@ namespace AndroidAltBeaconLibrary.Sample
 
 			if(_beaconManager.IsBound(this))
 			{
-				_beaconManager.SetBackgroundMode(false);
+				_beaconManager.BackgroundMode = false;
 			}
 		}
 
@@ -155,7 +155,7 @@ namespace AndroidAltBeaconLibrary.Sample
 
 			if(_beaconManager.IsBound(this))
 			{
-				_beaconManager.SetBackgroundMode(true);
+				_beaconManager.BackgroundMode = true;
 			}
 
 			((BeaconReferenceApplication) this.ApplicationContext).MainActivity = null;
@@ -305,7 +305,7 @@ namespace AndroidAltBeaconLibrary.Sample
 
 		public void OnBeaconServiceConnect()
 		{
-			_beaconManager.SetForegroundBetweenScanPeriod(5000); // 5000 milliseconds
+			_beaconManager.ForegroundBetweenScanPeriod = 5000; // 5000 milliseconds
 
 			_beaconManager.AddRangeNotifier(_rangeNotifier);
 
